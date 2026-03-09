@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@source "./App.tsx";
+@source "./components/**/*.{ts,tsx}";
+@source "../index.html";
+@source "../src/components/**/*.{ts,tsx}";
+
+html {
+  scroll-behavior: smooth;
+}

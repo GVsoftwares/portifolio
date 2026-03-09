@@ -6,7 +6,7 @@ export default function Contact() {
     <section id="contato" className="py-24 bg-slate-950 relative border-t border-slate-800/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16">
-          
+
           {/* Left Column: Info */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -18,13 +18,13 @@ export default function Contact() {
               <MessageSquare className="w-4 h-4" />
               Fale Conosco
             </div>
-            
+
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
               Pronto para transformar a sua empresa?
             </h2>
-            
+
             <p className="text-slate-400 text-lg mb-12 leading-relaxed">
-              Entre em contato conosco para discutir o seu projeto. Nossa equipe está pronta 
+              Entre em contato conosco para discutir o seu projeto. Nossa equipe está pronta
               para entender suas necessidades e propor a melhor solução tecnológica.
             </p>
 
@@ -37,6 +37,18 @@ export default function Contact() {
                   <h4 className="text-white font-bold mb-1">Email Comercial</h4>
                   <a href="mailto:contato@gvsoftwares.com.br" className="text-slate-400 hover:text-cyan-400 transition-colors">
                     contato@gvsoftwares.com.br
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="p-3 rounded-xl bg-slate-900 border border-slate-800">
+                  <MessageSquare className="w-6 h-6 text-blue-400" />
+                </div>
+                <div>
+                  <h4 className="text-white font-bold mb-1">Suporte</h4>
+                  <a href="mailto:suporte@gvsoftwares.com" className="text-slate-400 hover:text-blue-400 transition-colors">
+                    suporte@gvsoftwares.com
                   </a>
                 </div>
               </div>
@@ -76,23 +88,23 @@ export default function Contact() {
             className="bg-slate-900 border border-slate-800 p-8 rounded-3xl shadow-2xl"
           >
             <h3 className="text-2xl font-bold text-white mb-6">Solicitar Orçamento</h3>
-            
+
             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-slate-400 mb-2">Nome Completo</label>
-                  <input 
-                    type="text" 
-                    id="name" 
+                  <input
+                    type="text"
+                    id="name"
                     className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
                     placeholder="Seu nome"
                   />
                 </div>
                 <div>
                   <label htmlFor="company" className="block text-sm font-medium text-slate-400 mb-2">Empresa</label>
-                  <input 
-                    type="text" 
-                    id="company" 
+                  <input
+                    type="text"
+                    id="company"
                     className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
                     placeholder="Sua empresa"
                   />
@@ -101,9 +113,9 @@ export default function Contact() {
 
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-slate-400 mb-2">Email Profissional</label>
-                <input 
-                  type="email" 
-                  id="email" 
+                <input
+                  type="email"
+                  id="email"
                   className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
                   placeholder="seu@email.com.br"
                 />
@@ -111,15 +123,15 @@ export default function Contact() {
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-slate-400 mb-2">Mensagem / Detalhes do Projeto</label>
-                <textarea 
-                  id="message" 
+                <textarea
+                  id="message"
                   rows={4}
                   className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all resize-none"
                   placeholder="Conte-nos um pouco sobre o que você precisa..."
                 ></textarea>
               </div>
 
-              <button 
+              <button
                 type="submit"
                 className="w-full py-4 text-base font-semibold text-white bg-cyan-600 hover:bg-cyan-500 rounded-xl transition-all shadow-[0_0_15px_rgba(8,145,178,0.3)] hover:shadow-[0_0_25px_rgba(8,145,178,0.5)]"
               >

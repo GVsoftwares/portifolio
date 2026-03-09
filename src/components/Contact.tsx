@@ -72,7 +72,7 @@ export default function Contact() {
                 <div>
                   <h4 className="text-white font-bold mb-1">Localização</h4>
                   <p className="text-slate-400">
-                    Brasil - Atendimento remoto para todo o país.
+                    Uberlândia - MG
                   </p>
                 </div>
               </div>

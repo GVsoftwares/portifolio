@@ -1,8 +1,21 @@
 import { ExternalLink, Github, MonitorSmartphone } from 'lucide-react';
 import { motion } from 'motion/react';
 
-export default function Portfolio() {
+import mvDespesasPreview from '../assets/mv-despesas-preview.png';
+
+interface PortfolioProps {
+  onViewDespesas?: () => void;
+}
+
+export default function Portfolio({ onViewDespesas }: PortfolioProps) {
   const projects = [
+    {
+      title: 'Mv-Despesas',
+      description: 'Aplicativo de gestão financeira focado em famílias e casais. Conta com dashboards interativos, sincronização em tempo real na nuvem e biometria.',
+      techs: ['React', 'Supabase', 'Tailwind', 'WebAuthn'],
+      result: 'Controle total de finanças e segurança biométrica nativa.',
+      image: mvDespesasPreview
+    },
     {
       title: 'Sistema de Gestão ERP',
       description: 'Plataforma completa para gestão financeira, controle de estoque e emissão de notas fiscais para varejo.',
@@ -102,6 +115,15 @@ export default function Portfolio() {
                   <h4 className="text-xs font-semibold text-emerald-500 uppercase tracking-wider mb-1">Resultado</h4>
                   <p className="text-sm text-emerald-100 font-medium">{project.result}</p>
                 </div>
+
+                {project.title === 'Mv-Despesas' && onViewDespesas && (
+                  <button
+                    onClick={onViewDespesas}
+                    className="mt-4 w-full py-3 bg-gradient-to-r from-[#7aa2f7] to-[#bb9af7] text-white font-bold rounded-xl hover:scale-105 transition-transform flex items-center justify-center gap-2 shadow-lg shadow-[#7aa2f7]/30"
+                  >
+                    <MonitorSmartphone size={18} /> Ver Apresentação Interativa
+                  </button>
+                )}
               </div>
             </motion.div>
           ))}

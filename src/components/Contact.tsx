@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 
 export default function Contact() {
   return (
-    <section id="contato" className="py-24 bg-slate-950 relative border-t border-slate-800/50">
+    <section id="contato" className="py-16 md:py-24 bg-slate-950 relative border-t border-slate-800/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16">
 
@@ -41,17 +41,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-slate-900 border border-slate-800">
-                  <MessageSquare className="w-6 h-6 text-blue-400" />
-                </div>
-                <div>
-                  <h4 className="text-white font-bold mb-1">Suporte</h4>
-                  <a href="mailto:suporte@gvsoftwares.com" className="text-slate-400 hover:text-blue-400 transition-colors">
-                    suporte@gvsoftwares.com
-                  </a>
-                </div>
-              </div>
+
 
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-xl bg-slate-900 border border-slate-800">

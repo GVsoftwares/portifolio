@@ -4,11 +4,11 @@ export default function Footer() {
   return (
     <footer className="bg-slate-950 border-t border-slate-800/50 py-12 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-cyan-950/20 pointer-events-none" />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
-          
-          <div className="col-span-2">
+
+          <div className="md:col-span-2">
             <a href="#home" className="flex items-center gap-2 group mb-6 inline-flex">
               <div className="p-2 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/20 transition-colors">
                 <Code2 className="w-6 h-6 text-cyan-400" />
@@ -18,7 +18,7 @@ export default function Footer() {
               </span>
             </a>
             <p className="text-slate-400 max-w-md leading-relaxed mb-6">
-              Transformando ideias em soluções digitais de alta performance. 
+              Transformando ideias em soluções digitais de alta performance.
               Desenvolvimento de software sob medida para empresas que querem crescer.
             </p>
             <div className="flex items-center gap-4">

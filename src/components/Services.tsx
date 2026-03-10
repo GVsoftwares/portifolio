@@ -46,7 +46,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="servicos" className="py-24 bg-slate-950 relative">
+    <section id="servicos" className="py-16 md:py-24 bg-slate-950 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div
@@ -73,7 +73,7 @@ export default function Services() {
             transition={{ delay: 0.2 }}
             className="text-slate-400 text-lg"
           >
-            Oferecemos um portfólio completo de serviços de tecnologia para modernizar, 
+            Oferecemos um portfólio completo de serviços de tecnologia para modernizar,
             otimizar e escalar a sua empresa.
           </motion.p>
         </div>

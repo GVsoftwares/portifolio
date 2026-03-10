@@ -51,7 +51,7 @@ export default function LiveDemo() {
   };
 
   return (
-    <section id="demo" className="py-24 bg-slate-900 relative overflow-hidden">
+    <section id="demo" className="py-16 md:py-24 bg-slate-900 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500/10 blur-[120px] rounded-full pointer-events-none" />
 
@@ -82,7 +82,7 @@ export default function LiveDemo() {
             transition={{ delay: 0.2 }}
             className="text-slate-400 text-lg"
           >
-            Teste um mini-dashboard financeiro agora mesmo. Adicione lançamentos e veja o sistema reagir em tempo real. 
+            Teste um mini-dashboard financeiro agora mesmo. Adicione lançamentos e veja o sistema reagir em tempo real.
             <span className="block mt-2 text-cyan-400 font-medium">Os dados não são salvos: atualize a página e tudo será resetado.</span>
           </motion.p>
         </div>
@@ -104,7 +104,7 @@ export default function LiveDemo() {
             </div>
             <div className="flex-1 flex justify-center">
               <div className="bg-slate-950 text-slate-400 text-xs px-4 py-1.5 rounded-md flex items-center gap-2 border border-slate-800 w-full max-w-md justify-center">
-                <Lock className="w-3 h-3 text-emerald-500" /> 
+                <Lock className="w-3 h-3 text-emerald-500" />
                 app.gvsoftwares.com.br/demo
               </div>
             </div>
@@ -125,7 +125,7 @@ export default function LiveDemo() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="bg-slate-900 border border-slate-800 p-6 rounded-xl">
                 <div className="flex justify-between items-start mb-4">
                   <div>
@@ -165,28 +165,26 @@ export default function LiveDemo() {
                       <button
                         type="button"
                         onClick={() => setType('income')}
-                        className={`py-2 text-sm font-medium rounded-lg border transition-colors ${
-                          type === 'income' 
-                            ? 'bg-emerald-500/10 border-emerald-500/50 text-emerald-400' 
+                        className={`py-2 text-sm font-medium rounded-lg border transition-colors ${type === 'income'
+                            ? 'bg-emerald-500/10 border-emerald-500/50 text-emerald-400'
                             : 'bg-slate-950 border-slate-800 text-slate-500 hover:text-slate-300'
-                        }`}
+                          }`}
                       >
                         Entrada
                       </button>
                       <button
                         type="button"
                         onClick={() => setType('expense')}
-                        className={`py-2 text-sm font-medium rounded-lg border transition-colors ${
-                          type === 'expense' 
-                            ? 'bg-red-500/10 border-red-500/50 text-red-400' 
+                        className={`py-2 text-sm font-medium rounded-lg border transition-colors ${type === 'expense'
+                            ? 'bg-red-500/10 border-red-500/50 text-red-400'
                             : 'bg-slate-950 border-slate-800 text-slate-500 hover:text-slate-300'
-                        }`}
+                          }`}
                       >
                         Saída
                       </button>
                     </div>
                   </div>
-                  
+
                   <div>
                     <label className="block text-xs font-medium text-slate-400 mb-1">Descrição</label>
                     <input

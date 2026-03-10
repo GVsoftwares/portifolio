@@ -27,7 +27,7 @@ export default function Portfolio() {
   ];
 
   return (
-    <section id="portfolio" className="py-24 bg-slate-900 relative">
+    <section id="portfolio" className="py-16 md:py-24 bg-slate-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div
@@ -70,15 +70,15 @@ export default function Portfolio() {
               className="group rounded-3xl bg-slate-800 border border-slate-700 overflow-hidden hover:border-cyan-500/50 transition-all duration-300 flex flex-col h-full"
             >
               <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
               </div>
-              
+
               <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
                   {project.title}
@@ -86,7 +86,7 @@ export default function Portfolio() {
                 <p className="text-slate-400 text-sm mb-6 flex-grow">
                   {project.description}
                 </p>
-                
+
                 <div className="mb-6">
                   <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Tecnologias</h4>
                   <div className="flex flex-wrap gap-2">

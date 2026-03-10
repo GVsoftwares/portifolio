@@ -24,7 +24,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section id="depoimentos" className="py-24 bg-slate-900 relative">
+    <section id="depoimentos" className="py-16 md:py-24 bg-slate-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div
@@ -58,11 +58,11 @@ export default function Testimonials() {
             >
               <Quote className="absolute top-6 right-6 w-10 h-10 text-slate-700/50" />
               <p className="text-slate-300 italic mb-8 relative z-10">"{testimonial.text}"</p>
-              
+
               <div className="flex items-center gap-4">
-                <img 
-                  src={testimonial.image} 
-                  alt={testimonial.name} 
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
                   className="w-12 h-12 rounded-full border-2 border-slate-700 object-cover"
                   referrerPolicy="no-referrer"
                 />

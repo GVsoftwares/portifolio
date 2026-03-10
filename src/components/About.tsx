@@ -9,14 +9,14 @@ export default function About() {
   ];
 
   return (
-    <section id="sobre" className="py-24 bg-slate-900 overflow-hidden relative">
+    <section id="sobre" className="py-16 md:py-24 bg-slate-900 overflow-hidden relative">
       {/* Decorative Elements */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-900/20 blur-[100px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-900/10 blur-[100px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          
+
           {/* Left Column: Text */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -28,13 +28,13 @@ export default function About() {
               <Users className="w-4 h-4" />
               Sobre a GV Softwares
             </div>
-            
+
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
               Tecnologia que impulsiona o <span className="text-cyan-400">crescimento</span> do seu negócio.
             </h2>
-            
+
             <p className="text-slate-400 text-lg mb-8 leading-relaxed">
-              Somos especialistas em transformar desafios complexos em soluções digitais simples e eficientes. 
+              Somos especialistas em transformar desafios complexos em soluções digitais simples e eficientes.
               Nosso foco é entregar sistemas de alta performance, organizados e escaláveis.
             </p>
 
@@ -62,7 +62,7 @@ export default function About() {
             className="relative"
           >
             <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-emerald-500/20 rounded-3xl blur-2xl" />
-            
+
             <div className="relative bg-slate-800/50 backdrop-blur-sm border border-slate-700 p-8 rounded-3xl shadow-2xl">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500 to-emerald-500 flex items-center justify-center text-white font-bold text-2xl shadow-lg">
@@ -70,12 +70,12 @@ export default function About() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-white">Nossa Liderança</h3>
-                  <p className="text-cyan-400">Victor & Sócio</p>
+                  <p className="text-cyan-400">Victor & Guilherme</p>
                 </div>
               </div>
 
               <p className="text-slate-300 mb-8 leading-relaxed">
-                Fundadores com vasta experiência em desenvolvimento de software, análise de dados e arquitetura de sistemas. 
+                Fundadores com vasta experiência em desenvolvimento de software, análise de dados e arquitetura de sistemas.
                 Combinamos expertise técnica com visão de negócios para entregar resultados reais.
               </p>
 

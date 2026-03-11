@@ -1,7 +1,50 @@
 import { Mail, MapPin, MessageSquare, Phone } from 'lucide-react';
 import { motion } from 'motion/react';
+import React, { useState } from 'react';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    company: '',
+    email: '',
+    message: ''
+  });
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('submitting');
+    
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/suporte@gvsoftwares.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          Nome: formData.name,
+          Empresa: formData.company || 'Não informada',
+          Email: formData.email,
+          Mensagem: formData.message,
+          _subject: `Novo Orçamento de ${formData.company || formData.name}`,
+          _template: 'box' // Estilo de email do formsubmit
+        })
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', company: '', email: '', message: '' });
+        setTimeout(() => setStatus('idle'), 5000); // Reseta a mensagem de sucesso
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('Erro ao enviar email:', error);
+      setStatus('error');
+    }
+  };
+
   return (
     <section id="contato" className="py-16 md:py-24 bg-slate-950 relative border-t border-slate-800/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -79,13 +122,16 @@ export default function Contact() {
           >
             <h3 className="text-2xl font-bold text-white mb-6">Solicitar Orçamento</h3>
 
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-slate-400 mb-2">Nome Completo</label>
                   <input
                     type="text"
                     id="name"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    required
                     className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
                     placeholder="Seu nome"
                   />
@@ -95,6 +141,8 @@ export default function Contact() {
                   <input
                     type="text"
                     id="company"
+                    value={formData.company}
+                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                     className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
                     placeholder="Sua empresa"
                   />
@@ -106,6 +154,9 @@ export default function Contact() {
                 <input
                   type="email"
                   id="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  required
                   className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
                   placeholder="seu@email.com.br"
                 />
@@ -116,6 +167,9 @@ export default function Contact() {
                 <textarea
                   id="message"
                   rows={4}
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  required
                   className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all resize-none"
                   placeholder="Conte-nos um pouco sobre o que você precisa..."
                 ></textarea>
@@ -123,10 +177,22 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full py-4 text-base font-semibold text-white bg-cyan-600 hover:bg-cyan-500 rounded-xl transition-all shadow-[0_0_15px_rgba(8,145,178,0.3)] hover:shadow-[0_0_25px_rgba(8,145,178,0.5)]"
+                disabled={status === 'submitting'}
+                className="w-full py-4 text-base font-semibold text-white bg-cyan-600 hover:bg-cyan-500 rounded-xl transition-all shadow-[0_0_15px_rgba(8,145,178,0.3)] hover:shadow-[0_0_25px_rgba(8,145,178,0.5)] disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                Enviar Mensagem
+                {status === 'submitting' ? 'Enviando...' : 'Enviar Mensagem'}
               </button>
+              
+              {status === 'success' && (
+                <div className="p-4 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-lg text-sm text-center">
+                  Mensagem enviada com sucesso! Entraremos em contato em breve.
+                </div>
+              )}
+              {status === 'error' && (
+                <div className="p-4 bg-red-500/10 border border-red-500/20 text-red-400 rounded-lg text-sm text-center">
+                  Ocorreu um erro ao enviar. Tente novamente ou use nosso WhatsApp.
+                </div>
+              )}
             </form>
           </motion.div>
 

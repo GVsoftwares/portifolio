@@ -15,6 +15,7 @@ import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import PortfolioMvDespesas from './components/PortfolioMvDespesas';
+import WhatsAppButton from './components/WhatsAppButton';
 
 export default function App() {
   const [currentView, setCurrentView] = useState<'home' | 'mvdespesas'>('home');
@@ -28,6 +29,7 @@ export default function App() {
             window.location.hash = '#portfolio';
           }, 100);
         }} />
+        <WhatsAppButton />
       </div>
     );
   }
@@ -46,6 +48,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 
+import { useEffect } from 'react';
 import {
   ShieldCheck,
   Users,
@@ -19,6 +20,10 @@ interface Props {
 }
 
 export default function PortfolioMvDespesas({ onBack }: Props) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="portfolio-mvdespesas">
       <header>

@@ -413,22 +413,105 @@
 /* Responsive */
 @media (max-width: 992px) {
 
-  .hero-content,
-  .feature-grid {
+  .portfolio-mvdespesas .hero-content,
+  .portfolio-mvdespesas .feature-grid {
     grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .portfolio-mvdespesas .feature-grid.reverse {
+    direction: ltr;
+  }
+
+  .portfolio-mvdespesas .feature-list li {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
 
-  .feature-list li {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero-text h1 {
+  .portfolio-mvdespesas .hero-text h1 {
     font-size: 3rem;
   }
 
-  .phone-mockup {
+  .portfolio-mvdespesas .phone-mockup {
     transform: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-mvdespesas .container {
+    padding: 0 1.5rem;
+  }
+
+  .portfolio-mvdespesas header {
+    padding: 0.75rem 0;
+  }
+
+  .portfolio-mvdespesas .nav-links {
+    display: none;
+  }
+
+  .portfolio-mvdespesas .logo .text-primary {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  .portfolio-mvdespesas .logo span {
+    display: none;
+  }
+
+  .portfolio-mvdespesas .hero {
+    padding-top: 100px;
+    min-height: auto;
+  }
+
+  .portfolio-mvdespesas .hero-text h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .portfolio-mvdespesas .hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .portfolio-mvdespesas .section {
+    padding: 4rem 0;
+  }
+
+  .portfolio-mvdespesas .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .portfolio-mvdespesas .feature-text h3 {
+    font-size: 1.8rem;
+  }
+
+  .portfolio-mvdespesas .phone-mockup {
+    width: 280px;
+    height: auto;
+    min-height: 560px;
+    padding-bottom: 2rem;
+  }
+
+  .portfolio-mvdespesas .app-screen {
+    overflow: hidden;
+    height: auto;
+    /* Remove scroll interno em mobile conforme pedido, mas permite crescer */
+  }
+
+  .portfolio-mvdespesas .mock-balance-value {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-mvdespesas .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .portfolio-mvdespesas .logo {
+    font-size: 1.2rem;
   }
 }

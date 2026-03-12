@@ -13,29 +13,8 @@ export default function Portfolio({ onViewDespesas }: PortfolioProps) {
       title: 'Mv-Despesas',
       description: 'Aplicativo de gestão financeira focado em famílias e casais. Conta com dashboards interativos, sincronização em tempo real na nuvem e biometria.',
       techs: ['React', 'Supabase', 'Tailwind', 'WebAuthn'],
-      result: 'Controle total de finanças e segurança biométrica nativa.',
+      result: 'Controle seus gastos e aumente em até 50% sua autonomia e planejamento financeiro.',
       image: mvDespesasPreview
-    },
-    {
-      title: 'Sistema de Gestão ERP',
-      description: 'Plataforma completa para gestão financeira, controle de estoque e emissão de notas fiscais para varejo.',
-      techs: ['React', 'Node.js', 'PostgreSQL', 'Docker'],
-      result: 'Redução de 40% no tempo de fechamento de caixa.',
-      image: 'https://picsum.photos/seed/erp/800/600?blur=2'
-    },
-    {
-      title: 'Dashboard de Vendas BI',
-      description: 'Painel interativo conectando múltiplas fontes de dados para análise de performance de equipe comercial.',
-      techs: ['Python', 'Pandas', 'React', 'Metabase'],
-      result: 'Aumento de 25% na conversão de leads.',
-      image: 'https://picsum.photos/seed/dashboard/800/600?blur=2'
-    },
-    {
-      title: 'Automação de Atendimento',
-      description: 'Bot integrado ao WhatsApp para triagem de clientes e agendamento automático de consultas.',
-      techs: ['Node.js', 'WhatsApp API', 'OpenAI', 'Redis'],
-      result: 'Atendimento 24/7 e redução de filas de espera.',
-      image: 'https://picsum.photos/seed/bot/800/600?blur=2'
     }
   ];
 
@@ -121,7 +100,7 @@ export default function Portfolio({ onViewDespesas }: PortfolioProps) {
                     onClick={onViewDespesas}
                     className="mt-4 w-full py-3 bg-gradient-to-r from-[#7aa2f7] to-[#bb9af7] text-white font-bold rounded-xl hover:scale-105 transition-transform flex items-center justify-center gap-2 shadow-lg shadow-[#7aa2f7]/30"
                   >
-                    <MonitorSmartphone size={18} /> Ver Apresentação Interativa
+                    <MonitorSmartphone size={18} /> Ver Mais Detalhes
                   </button>
                 )}
               </div>

@@ -44,7 +44,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               <li><a href="#home" className="text-slate-400 hover:text-cyan-400 transition-colors">Início</a></li>
               <li><a href="#sobre" className="text-slate-400 hover:text-cyan-400 transition-colors">Sobre Nós</a></li>
               <li><a href="#servicos" className="text-slate-400 hover:text-cyan-400 transition-colors">Serviços</a></li>
-              <li><a href="#portfolio" className="text-slate-400 hover:text-cyan-400 transition-colors">Portfólio</a></li>
+              <li><a href="#portfolio" className="text-slate-400 hover:text-cyan-400 transition-colors">Projetos</a></li>
             </ul>
           </div>
 

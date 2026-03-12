@@ -5,8 +5,8 @@ export default function Services() {
   const services = [
     {
       icon: Code2,
-      title: 'Desenvolvimento de Sistemas Web',
-      description: 'Criamos plataformas robustas, seguras e escaláveis para atender às necessidades específicas do seu negócio.',
+      title: 'Desenvolvimento Web e Criação de Sites',
+      description: 'Criamos sites incríveis, landing pages persuasivas e sistemas web robustos para conectar sua marca ao mundo digital.',
       color: 'text-cyan-400',
       bg: 'bg-cyan-400/10',
       border: 'border-cyan-400/20'
@@ -21,8 +21,8 @@ export default function Services() {
     },
     {
       icon: Settings,
-      title: 'Automação de Processos',
-      description: 'Elimine tarefas repetitivas. Criamos scripts e integrações que economizam tempo e reduzem erros.',
+      title: 'Engenharia de Automações e Fluxos N8N',
+      description: 'Somos especialistas na construção de fluxos N8N. Conectamos seus sistemas e criamos automações inteligentes que economizam horas de trabalho.',
       color: 'text-blue-400',
       bg: 'bg-blue-400/10',
       border: 'border-blue-400/20'

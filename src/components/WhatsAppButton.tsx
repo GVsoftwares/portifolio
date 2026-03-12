@@ -2,28 +2,45 @@ import { useState, useEffect } from 'react';
 
 export default function WhatsAppButton() {
     const [isVisible, setIsVisible] = useState(false);
+    const [isShaking, setIsShaking] = useState(false);
     const phoneNumber = '5534998767988';
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20GV%20Softwares.`;
 
-    // Mostrar botão após scrollar um pouco para não ficar em cima do hero inicial, opcional
     useEffect(() => {
-        const toggleVisibility = () => {
+        let shakeTimeout: number | undefined;
+
+        const toggleVisibilityAndShake = () => {
             if (window.scrollY > 300) {
                 setIsVisible(true);
             } else {
                 setIsVisible(false);
             }
+
+            // Ativa o shake (tremor) quando chega no meio da página (aprox 50%)
+            const scrollPosition = window.scrollY + window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const isMiddle = scrollPosition >= (documentHeight / 2) && scrollPosition < (documentHeight * 0.7);
+
+            if (isMiddle && !isShaking) {
+                setIsShaking(true);
+                // Para de tremer após 3 segundos
+                shakeTimeout = window.setTimeout(() => {
+                    setIsShaking(false);
+                }, 3000);
+            }
         };
 
-        window.addEventListener('scroll', toggleVisibility);
+        window.addEventListener('scroll', toggleVisibilityAndShake);
 
-        // Mostra inicialmente de qualquer forma em telas muito pequenas onde o scroll é rápido
         if (window.innerWidth < 768) {
             setIsVisible(true);
         }
 
-        return () => window.removeEventListener('scroll', toggleVisibility);
-    }, []);
+        return () => {
+            window.removeEventListener('scroll', toggleVisibilityAndShake);
+            if (shakeTimeout) window.clearTimeout(shakeTimeout);
+        };
+    }, [isShaking]);
 
     return (
         <div
@@ -31,16 +48,16 @@ export default function WhatsAppButton() {
                 }`}
         >
             <div className="relative group">
-                {/* Tooltip */}
                 <div className="absolute -top-12 right-0 bg-slate-800 text-slate-200 text-sm py-2 px-4 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-slate-700 pointer-events-none before:content-[''] before:absolute before:-bottom-2 before:right-6 before:border-4 before:border-transparent before:border-t-slate-800">
                     Fale com a gente! 👋
                 </div>
-                {/* Botão principal */}
                 <a
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative flex items-center justify-center w-14 h-14 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full shadow-lg transition-transform hover:scale-110 active:scale-95 z-10"
+                    className={`relative flex items-center justify-center w-14 h-14 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full shadow-lg transition-transform z-10 ${
+                        isShaking ? 'animate-shake' : 'hover:scale-110 active:scale-95'
+                    }`}
                     aria-label="Contato via WhatsApp"
                 >
                     <svg

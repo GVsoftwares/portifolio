@@ -5,7 +5,7 @@ export default function About() {
   const features = [
     { icon: Code, title: 'Desenvolvimento Sob Medida', desc: 'Sistemas criados especificamente para a sua operação.' },
     { icon: Database, title: 'Análise de Dados', desc: 'Dashboards inteligentes para tomada de decisão.' },
-    { icon: TrendingUp, title: 'Automação de Processos', desc: 'Reduza tarefas manuais e aumente a produtividade.' },
+    { icon: TrendingUp, title: 'Fluxos N8N e Automações', desc: 'Especialistas em conectar sistemas e automatizar rotinas para aumentar a produtividade.' },
   ];
 
   return (
@@ -69,21 +69,21 @@ export default function About() {
                   GV
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white">Nossa Liderança</h3>
-                  <p className="text-cyan-400">Victor & Guilherme</p>
+                  <h3 className="text-2xl font-bold text-white">Nossa Equipe</h3>
+                  <p className="text-cyan-400">Especialistas em Tecnologia</p>
                 </div>
               </div>
 
               <p className="text-slate-300 mb-8 leading-relaxed">
-                Fundadores com vasta experiência em desenvolvimento de software, análise de dados e arquitetura de sistemas.
+                Contamos com vasta experiência em desenvolvimento de software, análise de dados e arquitetura de sistemas.
                 Combinamos expertise técnica com visão de negócios para entregar resultados reais.
               </p>
 
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  'Especialistas em Python',
+                  'Criação de Sites e Plataformas',
                   'Arquitetura SQL Avançada',
-                  'Foco em Performance',
+                  'Fluxos N8N e Automações',
                   'Código Escalável',
                   'Análise de Dados',
                   'Soluções Cloud'

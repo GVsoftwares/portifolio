@@ -7,6 +7,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     company: '',
+    role: '',
     email: '',
     message: ''
   });
@@ -27,6 +28,7 @@ export default function Contact() {
       const templateParams = {
         NOME: formData.name,
         EMPRESA: formData.company || 'Não informada',
+        CARGO: formData.role || 'Não informado',
         EMAIL: formData.email,
         MENSAGEM: formData.message,
       };
@@ -39,7 +41,7 @@ export default function Contact() {
       );
 
       setStatus('success');
-      setFormData({ name: '', company: '', email: '', message: '' });
+      setFormData({ name: '', company: '', role: '', email: '', message: '' });
       setTimeout(() => setStatus('idle'), 5000);
       
     } catch (error) {
@@ -152,17 +154,30 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-400 mb-2">Email Profissional</label>
-                <input
-                  type="email"
-                  id="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  required
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
-                  placeholder="seu@email.com.br"
-                />
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="role" className="block text-sm font-medium text-slate-400 mb-2">Seu Cargo</label>
+                  <input
+                    type="text"
+                    id="role"
+                    value={formData.role}
+                    onChange={(e) => setFormData({ ...formData, role: e.target.value })}
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
+                    placeholder="Ex: Gerente, Diretor, etc."
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-400 mb-2">Email Profissional</label>
+                  <input
+                    type="email"
+                    id="email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    required
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
+                    placeholder="seu@email.com.br"
+                  />
+                </div>
               </div>
 
               <div>

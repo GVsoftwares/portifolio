@@ -18,8 +18,7 @@ export default function Navbar() {
     { name: 'Início', href: '#home' },
     { name: 'Sobre', href: '#sobre' },
     { name: 'Serviços', href: '#servicos' },
-    { name: 'Portfólio', href: '#portfolio' },
-    { name: 'Demo Ao Vivo', href: '#demo' },
+    { name: 'Projetos', href: '#portfolio' },
     { name: 'Contato', href: '#contato' },
   ];
 

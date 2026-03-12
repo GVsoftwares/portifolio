@@ -1,6 +1,10 @@
 import { Code2, Github, Linkedin, Twitter } from 'lucide-react';
 
-export default function Footer() {
+interface FooterProps {
+  onNavigate?: (view: 'home' | 'privacy' | 'terms') => void;
+}
+
+export default function Footer({ onNavigate }: FooterProps) {
   return (
     <footer className="bg-slate-950 border-t border-slate-800/50 py-12 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-cyan-950/20 pointer-events-none" />
@@ -61,8 +65,18 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} GV Softwares. Todos os direitos reservados.
           </p>
           <div className="flex gap-6 text-sm text-slate-500">
-            <a href="#" className="hover:text-cyan-400 transition-colors">Política de Privacidade</a>
-            <a href="#" className="hover:text-cyan-400 transition-colors">Termos de Uso</a>
+            <button 
+              onClick={() => onNavigate && onNavigate('privacy')}
+              className="hover:text-cyan-400 transition-colors"
+            >
+              Política de Privacidade
+            </button>
+            <button 
+              onClick={() => onNavigate && onNavigate('terms')}
+              className="hover:text-cyan-400 transition-colors"
+            >
+              Termos de Uso
+            </button>
           </div>
         </div>
       </div>

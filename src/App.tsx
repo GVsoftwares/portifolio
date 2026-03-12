@@ -16,19 +16,46 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import PortfolioMvDespesas from './components/PortfolioMvDespesas';
 import WhatsAppButton from './components/WhatsAppButton';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsOfUse from './components/TermsOfUse';
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'mvdespesas'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'mvdespesas' | 'privacy' | 'terms'>('home');
+
+  const handleNavigate = (view: 'home' | 'mvdespesas' | 'privacy' | 'terms') => {
+    setCurrentView(view);
+    window.scrollTo(0, 0);
+  };
 
   if (currentView === 'mvdespesas') {
     return (
       <div className="bg-slate-950 text-slate-300 font-sans selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden min-h-screen">
         <PortfolioMvDespesas onBack={() => {
-          setCurrentView('home');
+          handleNavigate('home');
           setTimeout(() => {
             window.location.hash = '#portfolio';
           }, 100);
         }} />
+        <WhatsAppButton />
+      </div>
+    );
+  }
+
+  if (currentView === 'privacy') {
+    return (
+      <div className="bg-slate-950 text-slate-300 font-sans selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden min-h-screen">
+        <PrivacyPolicy onBack={() => handleNavigate('home')} />
+        <Footer onNavigate={handleNavigate} />
+        <WhatsAppButton />
+      </div>
+    );
+  }
+
+  if (currentView === 'terms') {
+    return (
+      <div className="bg-slate-950 text-slate-300 font-sans selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden min-h-screen">
+        <TermsOfUse onBack={() => handleNavigate('home')} />
+        <Footer onNavigate={handleNavigate} />
         <WhatsAppButton />
       </div>
     );
@@ -41,13 +68,13 @@ export default function App() {
         <Hero />
         <About />
         <Services />
-        <Portfolio onViewDespesas={() => setCurrentView('mvdespesas')} />
+        <Portfolio onViewDespesas={() => handleNavigate('mvdespesas')} />
         <LiveDemo />
         <Differentiators />
         <Testimonials />
         <Contact />
       </main>
-      <Footer />
+      <Footer onNavigate={handleNavigate} />
       <WhatsAppButton />
     </div>
   );

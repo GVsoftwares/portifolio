@@ -1,6 +1,7 @@
 import { Mail, MapPin, MessageSquare, Phone } from 'lucide-react';
 import { motion } from 'motion/react';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -11,36 +12,38 @@ export default function Contact() {
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
+  const formRef = useRef<HTMLFormElement>(null);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
     
     try {
-      const response = await fetch('https://formsubmit.co/ajax/suporte@gvsoftwares.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          Nome: formData.name,
-          Empresa: formData.company || 'Não informada',
-          Email: formData.email,
-          Mensagem: formData.message,
-          _subject: `Novo Orçamento de ${formData.company || formData.name}`,
-          _template: 'box' // Estilo de email do formsubmit
-        })
-      });
+      // Substituir estes 3 parâmetros (SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY)
+      // pelas chaves reais criadas no painel do EmailJS mais tarde.
+      // O EmailJS fará o match das variáveis {{NOME}}, {{EMPRESA}}, {{EMAIL}} e {{MENSAGEM}}
+      // com o atributo "name" correspondente nos inputs do formulário ou objeto passado
+      
+      const templateParams = {
+        NOME: formData.name,
+        EMPRESA: formData.company || 'Não informada',
+        EMAIL: formData.email,
+        MENSAGEM: formData.message,
+      };
 
-      if (response.ok) {
-        setStatus('success');
-        setFormData({ name: '', company: '', email: '', message: '' });
-        setTimeout(() => setStatus('idle'), 5000); // Reseta a mensagem de sucesso
-      } else {
-        setStatus('error');
-      }
+      await emailjs.send(
+        'service_exx3i3v', // SERVICE_ID
+        'template_51jb0c8', // TEMPLATE_ID
+        templateParams,
+        'bhdA1Osq6m3Vw0F6r' // PUBLIC_KEY
+      );
+
+      setStatus('success');
+      setFormData({ name: '', company: '', email: '', message: '' });
+      setTimeout(() => setStatus('idle'), 5000);
+      
     } catch (error) {
-      console.error('Erro ao enviar email:', error);
+      console.error('Erro ao enviar email via EmailJS:', error);
       setStatus('error');
     }
   };
@@ -78,8 +81,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-white font-bold mb-1">Email Comercial</h4>
-                  <a href="mailto:contato@gvsoftwares.com.br" className="text-slate-400 hover:text-cyan-400 transition-colors">
-                    contato@gvsoftwares.com.br
+                  <a href="mailto:suporte@gvsoftwares.com" className="text-slate-400 hover:text-cyan-400 transition-colors">
+                    suporte@gvsoftwares.com
                   </a>
                 </div>
               </div>
@@ -92,8 +95,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-white font-bold mb-1">WhatsApp</h4>
-                  <a href="#" className="text-slate-400 hover:text-emerald-400 transition-colors">
-                    +55 (11) 99999-9999
+                  <a href="https://wa.me/5534998767988" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-emerald-400 transition-colors">
+                    +55 (34) 99876-7988
                   </a>
                 </div>
               </div>
@@ -122,7 +125,7 @@ export default function Contact() {
           >
             <h3 className="text-2xl font-bold text-white mb-6">Solicitar Orçamento</h3>
 
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form ref={formRef} className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-slate-400 mb-2">Nome Completo</label>

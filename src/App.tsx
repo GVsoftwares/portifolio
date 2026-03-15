@@ -15,17 +15,32 @@ import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import PortfolioMvDespesas from './components/PortfolioMvDespesas';
+import PortfolioBarataoDoDia from './components/PortfolioBaratao';
 import WhatsAppButton from './components/WhatsAppButton';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfUse from './components/TermsOfUse';
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'mvdespesas' | 'privacy' | 'terms'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'mvdespesas' | 'baratao' | 'privacy' | 'terms'>('home');
 
-  const handleNavigate = (view: 'home' | 'mvdespesas' | 'privacy' | 'terms') => {
+  const handleNavigate = (view: 'home' | 'mvdespesas' | 'baratao' | 'privacy' | 'terms') => {
     setCurrentView(view);
     window.scrollTo(0, 0);
   };
+
+  if (currentView === 'baratao') {
+    return (
+      <div className="bg-slate-950 text-slate-300 font-sans selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden min-h-screen">
+        <PortfolioBarataoDoDia onBack={() => {
+          handleNavigate('home');
+          setTimeout(() => {
+            window.location.hash = '#portfolio';
+          }, 100);
+        }} />
+        <WhatsAppButton />
+      </div>
+    );
+  }
 
   if (currentView === 'mvdespesas') {
     return (
@@ -68,7 +83,7 @@ export default function App() {
         <Hero />
         <About />
         <Services />
-        <Portfolio onViewDespesas={() => handleNavigate('mvdespesas')} />
+        <Portfolio onViewDespesas={() => handleNavigate('mvdespesas')} onViewBaratao={() => handleNavigate('baratao')} />
 
         <Differentiators />
         <Testimonials />

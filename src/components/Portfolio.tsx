@@ -1,13 +1,15 @@
-import { ExternalLink, Github, MonitorSmartphone } from 'lucide-react';
+import { ExternalLink, MonitorSmartphone } from 'lucide-react';
 import { motion } from 'motion/react';
 
 import mvDespesasPreview from '../assets/mv-despesas-preview.png';
+import barataoPreview from '../assets/baratao_preview.png';
 
 interface PortfolioProps {
   onViewDespesas?: () => void;
+  onViewBaratao?: () => void;
 }
 
-export default function Portfolio({ onViewDespesas }: PortfolioProps) {
+export default function Portfolio({ onViewDespesas, onViewBaratao }: PortfolioProps) {
   const projects = [
     {
       title: 'Mv-Despesas',
@@ -15,6 +17,13 @@ export default function Portfolio({ onViewDespesas }: PortfolioProps) {
       techs: ['React', 'Supabase', 'Tailwind', 'WebAuthn'],
       result: 'Controle seus gastos e aumente em até 50% sua autonomia e planejamento financeiro.',
       image: mvDespesasPreview
+    },
+    {
+      title: 'Baratão do Dia',
+      description: 'Vitrine digital multicanal para e-commerce. Substitui o link na bio por uma plataforma com CMS próprio, encaminhamento inteligente de vendas e experiência mobile-first.',
+      techs: ['React', 'Supabase', 'TypeScript', 'Vite'],
+      result: 'Aumente suas conversões com uma vitrine profissional, rápida e fácil de gerenciar.',
+      image: barataoPreview
     }
   ];
 
@@ -99,6 +108,14 @@ export default function Portfolio({ onViewDespesas }: PortfolioProps) {
                   <button
                     onClick={onViewDespesas}
                     className="mt-4 w-full py-3 bg-gradient-to-r from-[#7aa2f7] to-[#bb9af7] text-white font-bold rounded-xl hover:scale-105 transition-transform flex items-center justify-center gap-2 shadow-lg shadow-[#7aa2f7]/30"
+                  >
+                    <MonitorSmartphone size={18} /> Ver Mais Detalhes
+                  </button>
+                )}
+                {project.title === 'Baratão do Dia' && onViewBaratao && (
+                  <button
+                    onClick={onViewBaratao}
+                    className="mt-4 w-full py-3 bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white font-bold rounded-xl hover:scale-105 transition-transform flex items-center justify-center gap-2 shadow-lg shadow-[#6366f1]/30"
                   >
                     <MonitorSmartphone size={18} /> Ver Mais Detalhes
                   </button>

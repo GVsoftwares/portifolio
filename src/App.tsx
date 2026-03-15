@@ -34,7 +34,10 @@ export default function App() {
         <PortfolioBarataoDoDia onBack={() => {
           handleNavigate('home');
           setTimeout(() => {
-            window.location.hash = '#portfolio';
+            const element = document.getElementById('portfolio');
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+            }
           }, 100);
         }} />
         <WhatsAppButton />
@@ -48,7 +51,10 @@ export default function App() {
         <PortfolioMvDespesas onBack={() => {
           handleNavigate('home');
           setTimeout(() => {
-            window.location.hash = '#portfolio';
+            const element = document.getElementById('portfolio');
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+            }
           }, 100);
         }} />
         <WhatsAppButton />

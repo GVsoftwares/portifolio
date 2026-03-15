@@ -7,8 +7,6 @@ export default function WhatsAppButton() {
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20GV%20Softwares.`;
 
     useEffect(() => {
-        let shakeTimeout: number | undefined;
-
         const toggleVisibilityAndShake = () => {
             if (window.scrollY > 300) {
                 setIsVisible(true);
@@ -16,18 +14,12 @@ export default function WhatsAppButton() {
                 setIsVisible(false);
             }
 
-            // Ativa o shake (tremor) quando chega no meio da página (aprox 50%)
+            // Ativa o shake (tremor) quando chega no meio da página (aprox 50% a 80%)
             const scrollPosition = window.scrollY + window.innerHeight;
             const documentHeight = document.documentElement.scrollHeight;
-            const isMiddle = scrollPosition >= (documentHeight / 2) && scrollPosition < (documentHeight * 0.7);
+            const isMiddle = scrollPosition >= (documentHeight / 2) && scrollPosition < (documentHeight * 0.8);
 
-            if (isMiddle && !isShaking) {
-                setIsShaking(true);
-                // Para de tremer após 3 segundos
-                shakeTimeout = window.setTimeout(() => {
-                    setIsShaking(false);
-                }, 3000);
-            }
+            setIsShaking(isMiddle);
         };
 
         window.addEventListener('scroll', toggleVisibilityAndShake);
@@ -38,9 +30,8 @@ export default function WhatsAppButton() {
 
         return () => {
             window.removeEventListener('scroll', toggleVisibilityAndShake);
-            if (shakeTimeout) window.clearTimeout(shakeTimeout);
         };
-    }, [isShaking]);
+    }, []);
 
     return (
         <div
@@ -55,9 +46,8 @@ export default function WhatsAppButton() {
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`relative flex items-center justify-center w-14 h-14 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full shadow-lg transition-transform z-10 ${
-                        isShaking ? 'animate-shake' : 'hover:scale-110 active:scale-95'
-                    }`}
+                    className={`relative flex items-center justify-center w-14 h-14 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full shadow-lg transition-transform z-10 ${isShaking ? 'animate-shake' : 'hover:scale-110 active:scale-95'
+                        }`}
                     aria-label="Contato via WhatsApp"
                 >
                     <svg

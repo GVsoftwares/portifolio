@@ -14,15 +14,11 @@ body {
 }
 
 @keyframes shake {
-  0% { transform: rotate(0deg); }
-  10% { transform: rotate(10deg); }
-  20% { transform: rotate(-10deg); }
-  30% { transform: rotate(10deg); }
-  40% { transform: rotate(-10deg); }
-  50% { transform: rotate(0deg); }
-  100% { transform: rotate(0deg); }
+  0%, 20%, 100% { transform: translateX(0); }
+  3%, 9%, 15% { transform: translateX(-5px); }
+  6%, 12%, 18% { transform: translateX(5px); }
 }
 
 .animate-shake {
-  animation: shake 2s ease-in-out infinite;
+  animation: shake 5s ease-in-out infinite;
 }

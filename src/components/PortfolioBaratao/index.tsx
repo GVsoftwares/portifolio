@@ -245,15 +245,17 @@ export default function PortfolioBarataoDoDia({ onBack }: Props) {
           <div className="footer-logo">
             <img src={logoSite} alt="Logo De Tudo um pouco" className="site-logo-img footer-logo-img" />
             De Tudo um pouco
+          </div>
+          <p className="copyright">
             <a 
               href="https://detudoumpouco.vercel.app" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="footer-site-link"
+              style={{ color: 'inherit', textDecoration: 'none' }}
             >
               detudoumpouco.vercel.app
             </a>
-          </div>
+          </p>
         </div>
       </footer>
     </div>

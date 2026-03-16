@@ -12,8 +12,8 @@ import {
 } from 'lucide-react';
 import './styles.css';
 
-import slideAdmin from '../../assets/slide_admin_baratao.png';
-import slideSeguranca from '../../assets/slide_seguranca_baratao.png';
+import slideAdmin from '../../assets/slide_admin_baratao.webp';
+import slideSeguranca from '../../assets/slide_seguranca_baratao.webp';
 import siteAnimation from '../../assets/baratao_desktop_video.mp4';
 import mobileAnimation from '../../assets/baratao_mobile_video.mp4';
 import logoSite from '../../assets/logo_detudoumpouco.webp';
@@ -166,10 +166,7 @@ export default function PortfolioBarataoDoDia({ onBack }: Props) {
                   <Settings size={10} color="#6366f1" /> Admin Dashboard
                 </div>
               </div>
-              <div className="web-content" style={{ backgroundImage: `url(${slideAdmin})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'top center' }}></div>
-               <div className="mock-overlay">
-                <Database size={16} color="#10b981" /> Supabase Backend
-              </div>
+              <div className="web-content" style={{ backgroundImage: `url(${slideAdmin})`, backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat', backgroundPosition: 'top center' }}></div>
             </div>
 
             <div className="feature-text">
@@ -213,7 +210,7 @@ export default function PortfolioBarataoDoDia({ onBack }: Props) {
                 <div className="web-dot" style={{ background: '#f59e0b' }}></div>
                 <div className="web-dot" style={{ background: '#10b981' }}></div>
               </div>
-              <div className="web-content" style={{ backgroundImage: `url(${slideSeguranca})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'top center' }}></div>
+              <div className="web-content" style={{ backgroundImage: `url(${slideSeguranca})`, backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat', backgroundPosition: 'top center' }}></div>
             </div>
 
             <div className="feature-text">

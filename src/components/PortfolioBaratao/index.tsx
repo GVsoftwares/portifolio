@@ -16,7 +16,7 @@ import slideAdmin from '../../assets/slide_admin_baratao.png';
 import slideSeguranca from '../../assets/slide_seguranca_baratao.png';
 import siteAnimation from '../../assets/baratao_desktop_video.mp4';
 import mobileAnimation from '../../assets/baratao_mobile_video.mp4';
-import logoSite from '../../assets/logo_detudoumpouco.png';
+import logoSite from '../../assets/logo_detudoumpouco.webp';
 
 interface Props {
   onBack: () => void;

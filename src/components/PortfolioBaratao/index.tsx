@@ -16,6 +16,7 @@ import slideAdmin from '../../assets/slide_admin_baratao.png';
 import slideSeguranca from '../../assets/slide_seguranca_baratao.png';
 import siteAnimation from '../../assets/baratao_desktop_video.mp4';
 import mobileAnimation from '../../assets/baratao_mobile_video.mp4';
+import logoSite from '../../assets/logo_detudoumpouco.png';
 
 interface Props {
   onBack: () => void;
@@ -30,19 +31,37 @@ export default function PortfolioBarataoDoDia({ onBack }: Props) {
     <div className="portfolio-baratao">
       <header>
         <div className="container nav-content">
-          <div className="logo" style={{ cursor: 'pointer' }} onClick={onBack}>
-            <ArrowRight className="text-primary" size={28} style={{ transform: 'rotate(180deg)' }} color="#6366f1" />
-            <span style={{ fontSize: '1rem', color: '#a9b1d6' }}>Voltar ao Início</span>
-          </div>
-          <div className="logo ml-4">
-            <ShoppingBag size={28} color="#6366f1" />
-            De Tudo um pouco
+          <div className="nav-left-group">
+            <div className="back-button" onClick={onBack}>
+              <ArrowRight className="text-primary" size={24} style={{ transform: 'rotate(180deg)' }} color="#6366f1" />
+              <span>Voltar</span>
+            </div>
+            <div className="logo">
+              <img src={logoSite} alt="Logo De Tudo um pouco" className="site-logo-img" />
+              <span>De Tudo um pouco</span>
+            </div>
           </div>
           <nav className="nav-links">
             <a href="#experiencia">Experiência</a>
             <a href="#admin">Gestão CMS</a>
             <a href="#seguranca">Segurança</a>
+            <a 
+              href="https://detudoumpouco.vercel.app" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="visit-site-link"
+            >
+              Visitar Website <ExternalLink size={16} />
+            </a>
           </nav>
+          <a 
+            href="https://detudoumpouco.vercel.app" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="visit-site-link mobile-only-link"
+          >
+            Site <ExternalLink size={14} />
+          </a>
         </div>
       </header>
 
@@ -227,8 +246,16 @@ export default function PortfolioBarataoDoDia({ onBack }: Props) {
       <footer>
         <div className="container">
           <div className="footer-logo">
-            <ShoppingBag color="#6366f1" className="inline-block mr-2" size={24} />
+            <img src={logoSite} alt="Logo De Tudo um pouco" className="site-logo-img footer-logo-img" />
             De Tudo um pouco
+            <a 
+              href="https://detudoumpouco.vercel.app" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="footer-site-link"
+            >
+              detudoumpouco.vercel.app
+            </a>
           </div>
         </div>
       </footer>

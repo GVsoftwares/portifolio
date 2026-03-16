@@ -76,12 +76,33 @@
   align-items: center;
 }
 
+.portfolio-mvdespesas .nav-left-group {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.portfolio-mvdespesas .back-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: #a9b1d6;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.portfolio-mvdespesas .back-button:hover {
+  color: var(--primary);
+}
+
 .portfolio-mvdespesas .logo {
   font-size: 1.5rem;
   font-weight: 900;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
+  color: #fff;
 }
 
 .portfolio-mvdespesas .nav-links {
@@ -452,13 +473,17 @@
     display: none;
   }
 
-  .portfolio-mvdespesas .logo .text-primary {
-    width: 24px !important;
-    height: 24px !important;
+  .portfolio-mvdespesas .nav-left-group {
+    gap: 1.5rem;
   }
 
-  .portfolio-mvdespesas .logo span {
-    display: none;
+  .portfolio-mvdespesas .logo {
+    font-size: 1.2rem;
+  }
+
+  .portfolio-mvdespesas .logo .text-primary {
+    width: 28px !important;
+    height: 28px !important;
   }
 
   .portfolio-mvdespesas .hero {
@@ -511,7 +536,15 @@
     font-size: 1.8rem;
   }
 
+  .portfolio-mvdespesas .nav-left-group {
+    gap: 1rem;
+  }
+
+  .portfolio-mvdespesas .back-button span {
+    display: none;
+  }
+
   .portfolio-mvdespesas .logo {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }

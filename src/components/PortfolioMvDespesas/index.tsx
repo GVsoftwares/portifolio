@@ -28,13 +28,15 @@ export default function PortfolioMvDespesas({ onBack }: Props) {
     <div className="portfolio-mvdespesas">
       <header>
         <div className="container nav-content">
-          <div className="logo" style={{ cursor: 'pointer' }} onClick={onBack}>
-            <ArrowRight className="text-primary" size={28} style={{ transform: 'rotate(180deg)' }} />
-            <span style={{ fontSize: '1rem', color: '#a9b1d6' }}>Voltar ao Início</span>
-          </div>
-          <div className="logo ml-4">
-            <Wallet className="text-primary" size={28} />
-            Mv-Despesas
+          <div className="nav-left-group">
+            <div className="back-button" onClick={onBack}>
+              <ArrowRight className="text-primary" size={24} style={{ transform: 'rotate(180deg)' }} color="#6366f1" />
+              <span>Voltar</span>
+            </div>
+            <div className="logo">
+              <Wallet className="text-primary" size={28} />
+              <span>Mv-Despesas</span>
+            </div>
           </div>
           <nav className="nav-links">
             <a href="#funcionalidades">Funcionalidades</a>

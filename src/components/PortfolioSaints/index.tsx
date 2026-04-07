@@ -80,11 +80,17 @@ export default function PortfolioSaints({ onBack }: Props) {
             </a>
           </div>
 
-          {/* Hero Mockup - Mobile Phone */}
-          <div className="phone-mockup floating">
-            <div className="phone-notch"></div>
-            <div className="app-screen">
-              <video className="video-fill" src={saintsMobileMp4} autoPlay loop muted playsInline />
+          {/* Hero Mockup - Web View */}
+          <div className="web-mockup floating">
+            <div className="web-header">
+              <div className="web-dot" style={{ background: '#ef4444' }}></div>
+              <div className="web-dot" style={{ background: '#f59e0b' }}></div>
+              <div className="web-dot" style={{ background: '#10b981' }}></div>
+              <div style={{ margin: '0 auto', fontSize: '0.7rem', color: '#d1bfae', display: 'flex', alignItems: 'center', gap: '5px', background: '#1c150f', padding: '2px 10px', borderRadius: '4px' }}>
+                <LayoutTemplate size={10} color="#f59e0b" /> www.saintsmassas.com.br
+              </div>
+            </div>
+            <div className="web-content" style={{ backgroundImage: `url(${saintsVideoGif})`, backgroundSize: 'cover', backgroundPosition: 'top center' }}>
             </div>
           </div>
         </div>

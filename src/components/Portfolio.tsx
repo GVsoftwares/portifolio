@@ -125,7 +125,7 @@ export default function Portfolio({ onViewDespesas, onViewBaratao, onViewSaints 
 
         {/* Futuristic Expanding Accordion */}
         <div 
-          className="flex h-[600px] w-full gap-2 md:gap-4 overflow-hidden rounded-[2rem]"
+          className="flex flex-col md:flex-row h-[800px] md:h-[600px] w-full gap-2 md:gap-4 overflow-hidden rounded-[2rem]"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
@@ -139,14 +139,16 @@ export default function Portfolio({ onViewDespesas, onViewBaratao, onViewSaints 
                 onClick={() => !isActive && setActiveIndex(idx)}
                 className={`relative rounded-3xl overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] flex cursor-pointer group ${
                   isActive 
-                    ? 'flex-[10] md:flex-[8] shadow-[0_0_40px_rgba(6,182,212,0.2)] border border-cyan-500/50' 
-                    : 'flex-[1] min-w-[60px] md:min-w-[100px] border border-slate-700/50 opacity-60 hover:opacity-100'
+                    ? 'flex-[12] md:flex-[8] shadow-[0_0_40px_rgba(6,182,212,0.2)] border border-cyan-500/50' 
+                    : 'flex-[1] min-h-[70px] md:min-h-0 md:min-w-[100px] border border-slate-700/50 opacity-60 hover:opacity-100'
                 } bg-slate-900`}
               >
                 {/* Background Image */}
                 <img
                   src={project.image}
                   alt={project.title}
+                  loading={isActive ? "eager" : "lazy"}
+                  decoding="async"
                   className={`absolute inset-0 w-full h-full object-cover transition-transform duration-1000 ${isActive ? 'scale-100' : 'scale-110 object-center'}`}
                   referrerPolicy="no-referrer"
                 />
@@ -162,7 +164,7 @@ export default function Portfolio({ onViewDespesas, onViewBaratao, onViewSaints 
 
                 {/* Inactive Vertical Title */}
                 <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${isActive ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-                  <h3 className="text-slate-300 font-bold whitespace-nowrap -rotate-90 tracking-[0.2em] text-lg md:text-xl transition-all group-hover:text-cyan-400 group-hover:tracking-[0.3em]">
+                  <h3 className="text-slate-300 font-bold whitespace-nowrap md:-rotate-90 tracking-[0.2em] text-lg md:text-xl transition-all group-hover:text-cyan-400 group-hover:tracking-[0.3em]">
                     {project.title}
                   </h3>
                 </div>
@@ -210,13 +212,13 @@ export default function Portfolio({ onViewDespesas, onViewBaratao, onViewSaints 
                       </span>
                     </button>
 
-                    <div className="flex-1 max-w-sm">
-                      <p className="text-xs text-emerald-400 font-mono mb-1 uppercase tracking-wider">Métrica Entregue <span className="animate-ping inline-flex h-2 w-2 rounded-full bg-emerald-400 opacity-75"></span></p>
-                      <p className="text-sm text-slate-300">{project.result}</p>
+                      <div className="flex-1 max-w-xs mt-4 sm:mt-0">
+                        <p className="text-xs text-emerald-400 font-mono mb-1 uppercase tracking-wider">Métrica Entregue <span className="animate-ping inline-flex h-2 w-2 rounded-full bg-emerald-400 opacity-75"></span></p>
+                        <p className="text-sm text-slate-300 leading-tight">{project.result}</p>
+                      </div>
                     </div>
-                  </div>
 
-                </div>
+                  </div>
               </motion.div>
             );
           })}

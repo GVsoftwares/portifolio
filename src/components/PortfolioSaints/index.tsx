@@ -80,16 +80,11 @@ export default function PortfolioSaints({ onBack }: Props) {
             </a>
           </div>
 
-          <div className="web-mockup floating">
-            <div className="web-header">
-              <div className="web-dot" style={{ background: '#ef4444' }}></div>
-              <div className="web-dot" style={{ background: '#f59e0b' }}></div>
-              <div className="web-dot" style={{ background: '#10b981' }}></div>
-              <div style={{ margin: '0 auto', fontSize: '0.7rem', color: '#d1bfae', display: 'flex', alignItems: 'center', gap: '5px', background: '#1c150f', padding: '2px 10px', borderRadius: '4px' }}>
-                <LayoutTemplate size={10} color="#f59e0b" /> www.saintsmassas.com.br
-              </div>
-            </div>
-            <div className="web-content" style={{ backgroundImage: `url(${saintsVideoGif})`, backgroundSize: 'cover', backgroundPosition: 'top center' }}>
+          {/* Hero Mockup - Mobile Phone */}
+          <div className="phone-mockup floating">
+            <div className="phone-notch"></div>
+            <div className="app-screen">
+              <video className="video-fill" src={saintsMobileMp4} autoPlay loop muted playsInline />
             </div>
           </div>
         </div>
@@ -117,22 +112,22 @@ export default function PortfolioSaints({ onBack }: Props) {
                 backdropFilter: 'blur(10px)'
               }}>
                 <h4 style={{ color: '#f59e0b', fontSize: '1.1rem', textTransform: 'uppercase', letterSpacing: '4px', margin: 0, fontWeight: 800 }}>Stack Tecnológico</h4>
-                <div style={{ display: 'flex', gap: '3.5rem', alignItems: 'flex-end', width: '100%', justifyContent: 'center' }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px' }}>
-                    <div style={{ background: 'rgba(255,255,255,0.03)', padding: '15px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.05)', transition: 'transform 0.3s' }}>
-                       <LayoutTemplate size={36} color="#38bdf8" />
+                <div style={{ display: 'flex', gap: 'clamp(1rem, 4vw, 3.5rem)', alignItems: 'flex-end', width: '100%', justifyContent: 'center', flexWrap: 'wrap' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+                    <div style={{ background: 'rgba(255,255,255,0.03)', padding: '12px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.05)', transition: 'transform 0.3s' }}>
+                       <LayoutTemplate size={28} color="#38bdf8" />
                     </div>
                     <span style={{ fontSize: '0.9rem', fontWeight: 'bold', color: '#d1bfae' }}>React</span>
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px' }}>
-                    <div style={{ background: 'linear-gradient(135deg, rgba(245,158,11,0.15), rgba(234,88,12,0.15))', padding: '24px', borderRadius: '50%', border: '2px solid rgba(245, 158, 11, 0.5)', transform: 'translateY(-15px)', boxShadow: '0 10px 25px rgba(245,158,11,0.25)' }}>
-                       <Zap size={44} color="#fcd34d" />
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+                    <div style={{ background: 'linear-gradient(135deg, rgba(245,158,11,0.15), rgba(234,88,12,0.15))', padding: '20px', borderRadius: '50%', border: '2px solid rgba(245, 158, 11, 0.5)', transform: 'translateY(-10px)', boxShadow: '0 10px 25px rgba(245,158,11,0.25)' }}>
+                       <Zap size={36} color="#fcd34d" />
                     </div>
                     <span style={{ fontSize: '1.2rem', fontWeight: 900, color: '#fcd34d', textShadow: '0 0 10px rgba(245,158,11,0.5)' }}>Vite</span>
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px' }}>
-                    <div style={{ background: 'rgba(255,255,255,0.03)', padding: '15px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.05)' }}>
-                       <Smartphone size={36} color="#c084fc" />
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+                    <div style={{ background: 'rgba(255,255,255,0.03)', padding: '12px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.05)' }}>
+                       <Smartphone size={28} color="#c084fc" />
                     </div>
                     <span style={{ fontSize: '0.9rem', fontWeight: 'bold', color: '#d1bfae' }}>Tailwind</span>
                   </div>

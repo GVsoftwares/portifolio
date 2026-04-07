@@ -118,8 +118,8 @@ export default function Portfolio({ onViewDespesas, onViewBaratao, onViewSaints 
           </div>
         </motion.div>
 
-        {/* Podium Structure around Accordion */}
-        <div className="p-2 md:p-4 rounded-[2.5rem] bg-[#0f172a]/50 border border-slate-800/60 backdrop-blur-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] relative">
+        {/* Podium Structure around Accordion - Otimizado sem Blur */}
+        <div className="p-2 md:p-4 rounded-[2.5rem] bg-[#020617]/95 border border-slate-800/80 shadow-[0_10px_30px_rgba(0,0,0,0.8)] relative">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-[2px] bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50"></div>
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-48 h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50"></div>
 
@@ -133,15 +133,14 @@ export default function Portfolio({ onViewDespesas, onViewBaratao, onViewSaints 
             const isActive = activeIndex === idx;
 
             return (
-              <motion.div
+              <div
                 key={idx}
-                layout
                 onClick={() => !isActive && setActiveIndex(idx)}
-                className={`relative rounded-3xl overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] flex cursor-pointer group ${
+                className={`relative rounded-3xl overflow-hidden flex cursor-pointer group will-change-[flex,flex-basis] transition-[flex] duration-500 ease-out ${
                   isActive 
-                    ? 'flex-[12] md:flex-[8] shadow-[0_0_40px_rgba(6,182,212,0.2)] border border-cyan-500/50' 
-                    : 'flex-[1] min-h-[70px] md:min-h-0 md:min-w-[100px] border border-slate-700/50 opacity-60 hover:opacity-100'
-                } bg-slate-900`}
+                    ? 'flex-[12] md:flex-[8] border-2 border-cyan-500/60' 
+                    : 'flex-[1] min-h-[70px] md:min-h-0 md:min-w-[100px] border border-slate-700/50 opacity-70 hover:opacity-100'
+                } bg-[#020617]`}
               >
                 {/* Background Image */}
                 <img
@@ -149,22 +148,22 @@ export default function Portfolio({ onViewDespesas, onViewBaratao, onViewSaints 
                   alt={project.title}
                   loading={isActive ? "eager" : "lazy"}
                   decoding="async"
-                  className={`absolute inset-0 w-full h-full object-cover transition-transform duration-1000 ${isActive ? 'scale-100' : 'scale-110 object-center'}`}
+                  className={`absolute inset-0 w-full h-full object-cover transition-transform duration-500 will-change-transform ${isActive ? 'scale-100' : 'scale-105 object-center'}`}
                   referrerPolicy="no-referrer"
                 />
                 
-                {/* Cyberpunk Grade/Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/70 to-transparent transition-opacity duration-700 ${isActive ? 'opacity-100' : 'opacity-90'}`} />
-                <div className={`absolute inset-0 bg-gradient-to-r from-[#020617] via-[#020617]/60 to-transparent transition-opacity duration-700 ${isActive ? 'opacity-100' : 'opacity-0'}`} />
+                {/* Cyberpunk Grade/Overlay (Sem transition lenta) */}
+                <div className={`absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/80 to-transparent ${isActive ? 'opacity-100' : 'opacity-90'}`} />
+                <div className={`absolute inset-0 bg-gradient-to-r from-[#020617] via-[#020617]/70 to-transparent ${isActive ? 'block' : 'hidden'}`} />
                 
-                {/* Scanline Effect (subtle) */}
+                {/* Scanline Effect (Otimizado para não travar mobile) */}
                 {isActive && (
-                  <div className="absolute inset-0 pointer-events-none opacity-10 bg-[linear-gradient(rgba(255,255,255,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]" />
+                  <div className="hidden md:block absolute inset-0 pointer-events-none opacity-5 bg-[linear-gradient(rgba(255,255,255,0)_50%,rgba(0,0,0,0.25)_50%)] bg-[length:100%_4px]" />
                 )}
 
                 {/* Inactive Vertical Title */}
-                <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${isActive ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-                  <h3 className="text-slate-300 font-bold whitespace-nowrap md:-rotate-90 tracking-[0.2em] text-lg md:text-xl transition-all group-hover:text-cyan-400 group-hover:tracking-[0.3em]">
+                <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${isActive ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+                  <h3 className="text-slate-300 font-bold whitespace-nowrap md:-rotate-90 tracking-[0.2em] text-lg md:text-xl transition-colors group-hover:text-cyan-400 group-hover:tracking-[0.3em] font-mono">
                     {project.title}
                   </h3>
                 </div>
@@ -181,14 +180,14 @@ export default function Portfolio({ onViewDespesas, onViewBaratao, onViewSaints 
                     {project.title}
                   </h3>
                   
-                  <p className="text-slate-300 text-sm md:text-lg mb-8 leading-relaxed max-w-xl backdrop-blur-sm bg-[#020617]/30 p-4 rounded-xl border-l-2 border-cyan-500/30">
+                  <p className="text-slate-300 text-sm md:text-lg mb-8 leading-relaxed max-w-xl bg-[#020617]/70 p-4 rounded-xl border-l-2 border-cyan-500/30">
                     {project.description}
                   </p>
 
                   <div className="mb-8">
-                    <div className="flex flex-wrap gap-3">
+                    <div className="flex flex-wrap gap-2">
                       {project.techs.map((tech, i) => (
-                        <span key={i} className="px-4 py-2 text-xs font-bold text-cyan-300 bg-[#020617]/80 backdrop-blur-md rounded-lg border border-cyan-500/30 shadow-[0_0_15px_rgba(6,182,212,0.15)] flex items-center gap-2">
+                        <span key={i} className="px-3 py-1.5 text-xs font-bold text-cyan-300 bg-[#020617] rounded-lg border border-cyan-500/30 shadow-none flex items-center gap-2">
                           <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
                           {tech}
                         </span>
@@ -219,7 +218,7 @@ export default function Portfolio({ onViewDespesas, onViewBaratao, onViewSaints 
                     </div>
 
                   </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>

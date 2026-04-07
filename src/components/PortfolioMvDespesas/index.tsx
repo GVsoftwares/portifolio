@@ -11,7 +11,8 @@ import {
   TrendingDown,
   TrendingUp,
   CreditCard,
-  Crown
+  Crown,
+  ExternalLink
 } from 'lucide-react';
 import './styles.css';
 
@@ -42,7 +43,23 @@ export default function PortfolioMvDespesas({ onBack }: Props) {
             <a href="#funcionalidades">Funcionalidades</a>
             <a href="#familia">Uso Familiar</a>
             <a href="#seguranca">Segurança</a>
+            <a 
+              href="https://mvdespesas.vercel.app/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="visit-site-link"
+            >
+              Conhecer app <ExternalLink size={16} />
+            </a>
           </nav>
+          <a 
+            href="https://mvdespesas.vercel.app/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="visit-site-link mobile-only-link"
+          >
+            App <ExternalLink size={14} />
+          </a>
         </div>
       </header>
 
@@ -342,7 +359,16 @@ export default function PortfolioMvDespesas({ onBack }: Props) {
             <Wallet className="text-primary inline-block mr-2" size={24} />
             MV-despesas
           </div>
-          <p className="copyright">MV-despesas</p>
+          <p className="copyright">
+            <a 
+              href="https://mvdespesas.vercel.app/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{ color: 'inherit', textDecoration: 'none' }}
+            >
+              mvdespesas.vercel.app
+            </a>
+          </p>
         </div>
       </footer>
     </div>

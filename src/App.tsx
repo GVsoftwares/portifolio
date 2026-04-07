@@ -11,19 +11,19 @@ import Services from './components/Services';
 import Portfolio from './components/Portfolio';
 
 import Differentiators from './components/Differentiators';
-import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import PortfolioMvDespesas from './components/PortfolioMvDespesas';
 import PortfolioBarataoDoDia from './components/PortfolioBaratao';
+import PortfolioSaints from './components/PortfolioSaints';
 import WhatsAppButton from './components/WhatsAppButton';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfUse from './components/TermsOfUse';
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'mvdespesas' | 'baratao' | 'privacy' | 'terms'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'mvdespesas' | 'baratao' | 'saints' | 'privacy' | 'terms'>('home');
 
-  const handleNavigate = (view: 'home' | 'mvdespesas' | 'baratao' | 'privacy' | 'terms') => {
+  const handleNavigate = (view: 'home' | 'mvdespesas' | 'baratao' | 'saints' | 'privacy' | 'terms') => {
     setCurrentView(view);
     window.scrollTo(0, 0);
   };
@@ -32,6 +32,23 @@ export default function App() {
     return (
       <div className="bg-slate-950 text-slate-300 font-sans selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden min-h-screen">
         <PortfolioBarataoDoDia onBack={() => {
+          handleNavigate('home');
+          setTimeout(() => {
+            const element = document.getElementById('portfolio');
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 100);
+        }} />
+        <WhatsAppButton />
+      </div>
+    );
+  }
+
+  if (currentView === 'saints') {
+    return (
+      <div className="bg-slate-950 text-slate-300 font-sans selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden min-h-screen">
+        <PortfolioSaints onBack={() => {
           handleNavigate('home');
           setTimeout(() => {
             const element = document.getElementById('portfolio');
@@ -89,10 +106,9 @@ export default function App() {
         <Hero />
         <About />
         <Services />
-        <Portfolio onViewDespesas={() => handleNavigate('mvdespesas')} onViewBaratao={() => handleNavigate('baratao')} />
+        <Portfolio onViewDespesas={() => handleNavigate('mvdespesas')} onViewBaratao={() => handleNavigate('baratao')} onViewSaints={() => handleNavigate('saints')} />
 
         <Differentiators />
-        <Testimonials />
         <Contact />
       </main>
       <Footer onNavigate={handleNavigate} />

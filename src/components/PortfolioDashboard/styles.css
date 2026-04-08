@@ -1,0 +1,603 @@
+/* ============================================================
+   Portfolio Dashboard Saints Massas — Styles
+   Scoped under .portfolio-dashboard to avoid leaking into app
+   ============================================================ */
+
+.portfolio-dashboard {
+  --db-bg:           #060C18;
+  --db-bg-light:     #0D1B3E;
+  --db-bg-card:      #112157;
+  --db-primary:      #3B82F6;
+  --db-accent:       #1D4ED8;
+  --db-highlight:    #60A5FA;
+  --db-success:      #10B981;
+  --db-warning:      #F59E0B;
+  --db-danger:       #EF4444;
+  --db-text:         #E2E8F0;
+  --db-muted:        #94A3B8;
+  --db-glass-border: rgba(59, 130, 246, 0.15);
+  --db-glow:         rgba(59, 130, 246, 0.2);
+
+  background: var(--db-bg);
+  color: var(--db-text);
+  font-family: 'Segoe UI', Inter, system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+.portfolio-dashboard *,
+.portfolio-dashboard *::before,
+.portfolio-dashboard *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio-dashboard .gradient-text {
+  background: linear-gradient(135deg, var(--db-primary), var(--db-highlight));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.portfolio-dashboard .container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ---- Header / Nav ---- */
+.portfolio-dashboard header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 0;
+  background: rgba(6, 12, 24, 0.92);
+  backdrop-filter: blur(14px);
+  z-index: 1000;
+  border-bottom: 1px solid var(--db-glass-border);
+}
+
+.portfolio-dashboard .nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.portfolio-dashboard .nav-left-group {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.portfolio-dashboard .back-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: var(--db-muted);
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.portfolio-dashboard .back-button:hover {
+  color: var(--db-primary);
+}
+
+.portfolio-dashboard .logo {
+  font-size: 1.4rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #fff;
+}
+
+.portfolio-dashboard .nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.portfolio-dashboard .nav-links a {
+  color: var(--db-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.portfolio-dashboard .nav-links a:hover {
+  color: var(--db-highlight);
+}
+
+.portfolio-dashboard .visit-site-link {
+  background: linear-gradient(135deg, var(--db-accent), var(--db-primary));
+  color: white !important;
+  padding: 0.5rem 1.25rem;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+.portfolio-dashboard .visit-site-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.45);
+}
+
+.portfolio-dashboard .mobile-only-link {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .portfolio-dashboard .mobile-only-link {
+    display: flex !important;
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+/* ---- Hero ---- */
+.portfolio-dashboard .hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 120px;
+  padding-bottom: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-dashboard .hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.portfolio-dashboard .hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.portfolio-dashboard .hero-text h1 {
+  font-size: clamp(2.2rem, 7vw, 3.8rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.portfolio-dashboard .hero-text p {
+  font-size: 1.2rem;
+  color: var(--db-muted);
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+}
+
+.portfolio-dashboard .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--db-highlight);
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.portfolio-dashboard .cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, var(--db-accent), var(--db-primary));
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.portfolio-dashboard .cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
+}
+
+/* ---- Sections ---- */
+.portfolio-dashboard .section {
+  padding: 8rem 0;
+  position: relative;
+  scroll-margin-top: 80px;
+}
+
+.portfolio-dashboard .section-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.portfolio-dashboard .section-header h2 {
+  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+  margin-bottom: 1rem;
+}
+
+.portfolio-dashboard .section-header p {
+  font-size: 1.15rem;
+  color: var(--db-muted);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.portfolio-dashboard .feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.portfolio-dashboard .feature-grid.reverse {
+  direction: rtl;
+}
+.portfolio-dashboard .feature-grid.reverse > * {
+  direction: ltr;
+}
+
+.portfolio-dashboard .feature-text h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+
+.portfolio-dashboard .feature-text p {
+  font-size: 1.05rem;
+  color: var(--db-muted);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.portfolio-dashboard .feature-list {
+  list-style: none;
+}
+
+.portfolio-dashboard .feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.portfolio-dashboard .feature-list .icon-wrapper {
+  background: rgba(59, 130, 246, 0.12);
+  color: var(--db-primary);
+  padding: 0.5rem;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.portfolio-dashboard .feature-list h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.portfolio-dashboard .feature-list p {
+  font-size: 0.95rem;
+  color: var(--db-muted);
+  margin: 0;
+}
+
+/* ---- Dashboard Web Mockup ---- */
+.portfolio-dashboard .web-mockup {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--db-glass-border);
+  box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.7), 0 0 40px rgba(59, 130, 246, 0.08);
+  overflow: hidden;
+  transform: perspective(1200px) rotateY(-4deg) rotateX(2deg);
+  transition: transform 0.5s ease;
+  background: var(--db-bg);
+}
+
+.portfolio-dashboard .web-mockup:hover {
+  transform: perspective(1200px) rotateY(0deg) rotateX(0deg) translateY(-8px);
+}
+
+.portfolio-dashboard .web-header {
+  height: 32px;
+  background: #050A14;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 6px;
+}
+
+.portfolio-dashboard .web-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.portfolio-dashboard .web-address {
+  margin: 0 auto;
+  font-size: 0.65rem;
+  color: var(--db-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255,255,255,0.05);
+  padding: 2px 10px;
+  border-radius: 4px;
+}
+
+/* ---- Dashboard UI inside mockup ---- */
+.portfolio-dashboard .dash-ui {
+  background: #0A1628;
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  min-height: 320px;
+}
+
+.portfolio-dashboard .dash-sidebar {
+  background: #071020;
+  border-right: 1px solid rgba(59, 130, 246, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 0;
+  gap: 16px;
+}
+
+.portfolio-dashboard .dash-sidebar-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.portfolio-dashboard .dash-sidebar-icon.active {
+  background: rgba(59, 130, 246, 0.25);
+}
+
+.portfolio-dashboard .dash-main {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.portfolio-dashboard .dash-title-row {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+
+.portfolio-dashboard .dash-kpi-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.portfolio-dashboard .dash-kpi {
+  background: linear-gradient(135deg, #1a3a8f, #1D4ED8);
+  border-radius: 8px;
+  padding: 8px 10px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.portfolio-dashboard .dash-kpi-label {
+  font-size: 0.5rem;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 3px;
+}
+
+.portfolio-dashboard .dash-kpi-value {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+
+.portfolio-dashboard .dash-kpi-sub {
+  font-size: 0.45rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 2px;
+}
+
+.portfolio-dashboard .dash-charts-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.portfolio-dashboard .dash-chart-box {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.portfolio-dashboard .dash-chart-title {
+  font-size: 0.5rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Bar chart bars */
+.portfolio-dashboard .bar-group {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 48px;
+}
+
+.portfolio-dashboard .bar {
+  flex: 1;
+  border-radius: 3px 3px 0 0;
+  background: linear-gradient(to top, var(--db-accent), var(--db-primary));
+  min-width: 6px;
+}
+
+/* Donut chart placeholder */
+.portfolio-dashboard .donut-ring {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #3B82F6 0deg 150deg,
+    #10B981 150deg 230deg,
+    #F59E0B 230deg 290deg,
+    #EF4444 290deg 360deg
+  );
+  position: relative;
+  margin: 0 auto;
+}
+
+.portfolio-dashboard .donut-ring::after {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  background: #0A1628;
+  border-radius: 50%;
+}
+
+/* ---- Stat Cards (Impacto section) ---- */
+.portfolio-dashboard .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+.portfolio-dashboard .stat-card {
+  background: linear-gradient(135deg, var(--db-bg-light), var(--db-bg-card));
+  border: 1px solid var(--db-glass-border);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-dashboard .stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(59, 130, 246, 0.15);
+}
+
+.portfolio-dashboard .stat-card h3 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--db-primary), var(--db-highlight));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-dashboard .stat-card p {
+  font-size: 0.9rem;
+  color: var(--db-muted);
+  font-weight: 500;
+}
+
+/* ---- Tech stack chips ---- */
+.portfolio-dashboard .tech-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.portfolio-dashboard .tech-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--db-highlight);
+}
+
+/* ---- Floating animation ---- */
+@keyframes dbFloat {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-14px); }
+  100% { transform: translateY(0px); }
+}
+
+.portfolio-dashboard .floating {
+  animation: dbFloat 6s ease-in-out infinite;
+}
+
+.portfolio-dashboard .delay-1 { animation-delay: 1.5s; }
+.portfolio-dashboard .delay-2 { animation-delay: 3s; }
+
+/* ---- Footer ---- */
+.portfolio-dashboard footer {
+  background: var(--db-bg-light);
+  padding: 4rem 0 2rem;
+  text-align: center;
+  border-top: 1px solid var(--db-glass-border);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 992px) {
+  .portfolio-dashboard .hero-content,
+  .portfolio-dashboard .feature-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .portfolio-dashboard .feature-grid.reverse {
+    direction: ltr;
+  }
+
+  .portfolio-dashboard .feature-list li {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .portfolio-dashboard .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-dashboard .container { padding: 0 1rem; }
+  .portfolio-dashboard header { padding: 0.75rem 0; }
+  .portfolio-dashboard .nav-links { display: none; }
+  .portfolio-dashboard .nav-left-group { gap: 1.5rem; }
+  .portfolio-dashboard .logo { font-size: 1.2rem; }
+  .portfolio-dashboard .hero { padding-top: 100px; min-height: auto; }
+  .portfolio-dashboard .web-mockup {
+    transform: perspective(1000px) rotateY(0) rotateX(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-dashboard .hero-text h1 { font-size: 1.9rem; }
+  .portfolio-dashboard .stats-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .portfolio-dashboard .back-button span { display: none; }
+}

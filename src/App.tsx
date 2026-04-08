@@ -16,11 +16,13 @@ import Footer from './components/Footer';
 import PortfolioMvDespesas from './components/PortfolioMvDespesas';
 import PortfolioBarataoDoDia from './components/PortfolioBaratao';
 import PortfolioSaints from './components/PortfolioSaints';
+import PortfolioChatbot from './components/PortfolioChatbot';
+import PortfolioDashboard from './components/PortfolioDashboard';
 import WhatsAppButton from './components/WhatsAppButton';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfUse from './components/TermsOfUse';
 
-type View = 'home' | 'mvdespesas' | 'baratao' | 'saints' | 'privacy' | 'terms';
+type View = 'home' | 'mvdespesas' | 'baratao' | 'saints' | 'chatbot' | 'dashboard' | 'privacy' | 'terms';
 
 export default function App() {
   const [currentView, setCurrentView] = useState<View>('home');
@@ -64,6 +66,24 @@ export default function App() {
       }, 100);
     }
   };
+
+  if (currentView === 'chatbot') {
+    return (
+      <div className="bg-slate-950 text-slate-300 font-sans selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden min-h-screen">
+        <PortfolioChatbot onBack={goBack} />
+        <WhatsAppButton />
+      </div>
+    );
+  }
+
+  if (currentView === 'dashboard') {
+    return (
+      <div className="bg-slate-950 text-slate-300 font-sans selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden min-h-screen">
+        <PortfolioDashboard onBack={goBack} />
+        <WhatsAppButton />
+      </div>
+    );
+  }
 
   if (currentView === 'baratao') {
     return (
@@ -122,7 +142,9 @@ export default function App() {
         <Portfolio 
           onViewDespesas={() => handleNavigate('mvdespesas')} 
           onViewBaratao={() => handleNavigate('baratao')} 
-          onViewSaints={() => handleNavigate('saints')} 
+          onViewSaints={() => handleNavigate('saints')}
+          onViewChatbot={() => handleNavigate('chatbot')}
+          onViewDashboard={() => handleNavigate('dashboard')}
         />
 
         <Differentiators />

@@ -1,0 +1,161 @@
+﻿<svg width="1400" height="800" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1E27"/>
+      <stop offset="100%" stop-color="#0D1B22"/>
+    </linearGradient>
+    <linearGradient id="phoneBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A2830"/>
+      <stop offset="100%" stop-color="#111B21"/>
+    </linearGradient>
+    <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#25D366"/>
+      <stop offset="100%" stop-color="#128C7E"/>
+    </linearGradient>
+    <radialGradient id="phoneGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#25D366" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#25D366" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="leftGlow" cx="30%" cy="55%" r="45%">
+      <stop offset="0%" stop-color="#128C7E" stop-opacity="0.09"/>
+      <stop offset="100%" stop-color="#0D1B22" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="screenClip">
+      <rect x="893" y="91" width="282" height="618" rx="12"/>
+    </clipPath>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.3" opacity="0.04"/>
+    </pattern>
+    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#ffffff" opacity="0.025"/>
+    </pattern>
+  </defs>
+
+  <rect width="1400" height="800" fill="url(#bgGrad)"/>
+  <rect width="1400" height="800" fill="url(#grid)"/>
+
+  <ellipse cx="420" cy="440" rx="480" ry="320" fill="url(#leftGlow)"/>
+  <ellipse cx="1040" cy="400" rx="380" ry="380" fill="url(#phoneGlow)"/>
+
+  <!-- Floating chat bubbles - left decorative area -->
+  <rect x="60" y="180" width="240" height="48" rx="12" fill="rgba(31,44,52,0.75)"/>
+  <rect x="60" y="180" width="4" height="48" rx="2" fill="#25D366" opacity="0.7"/>
+  <text x="74" y="202" fill="#E9EDEF" font-size="12" opacity="0.8">Bom dia! Quero saber sobre planos</text>
+  <text x="74" y="222" fill="#8696A0" font-size="10" opacity="0.7">Cliente -- 09:14</text>
+
+  <rect x="100" y="260" width="290" height="58" rx="12" fill="rgba(0,92,75,0.55)"/>
+  <rect x="100" y="260" width="4" height="58" rx="2" fill="#25D366"/>
+  <text x="114" y="280" fill="#E9EDEF" font-size="12" opacity="0.9">Ola! Para encontrar o plano ideal,</text>
+  <text x="114" y="298" fill="#E9EDEF" font-size="12" opacity="0.9">pode me dizer o seu perfil?</text>
+  <text x="350" y="312" fill="#8696A0" font-size="10" opacity="0.7">Chatbot IA -- 09:14</text>
+
+  <rect x="40" y="352" width="220" height="44" rx="12" fill="rgba(31,44,52,0.6)"/>
+  <text x="56" y="373" fill="#E9EDEF" font-size="12" opacity="0.75">Tenho uma pequena loja online</text>
+  <text x="56" y="389" fill="#8696A0" font-size="10" opacity="0.6">09:15</text>
+
+  <rect x="80" y="420" width="320" height="56" rx="12" fill="rgba(0,92,75,0.45)"/>
+  <text x="96" y="439" fill="#E9EDEF" font-size="12" opacity="0.8">Otimo! Para lojas de moda, nosso plano</text>
+  <text x="96" y="457" fill="#E9EDEF" font-size="12" opacity="0.8">Pro tem ROI medio de 4x em 90 dias</text>
+  <text x="362" y="470" fill="#8696A0" font-size="10" opacity="0.7">09:15</text>
+
+  <rect x="50" y="508" width="160" height="36" rx="12" fill="rgba(31,44,52,0.5)"/>
+  <text x="66" y="531" fill="#E9EDEF" font-size="12" opacity="0.6">Me conta mais!</text>
+
+  <!-- Status badges floating -->
+  <rect x="520" y="150" width="174" height="34" rx="17" fill="rgba(37,211,102,0.1)" stroke="#25D366" stroke-width="1" stroke-opacity="0.3"/>
+  <circle cx="542" cy="167" r="5" fill="#25D366"/>
+  <text x="555" y="172" fill="#25D366" font-size="12" font-weight="bold">Respondendo agora</text>
+
+  <rect x="480" y="606" width="162" height="34" rx="17" fill="rgba(52,183,241,0.1)" stroke="#34B7F1" stroke-width="1" stroke-opacity="0.35"/>
+  <text x="499" y="628" fill="#34B7F1" font-size="12" font-weight="bold">Lead qualificado</text>
+
+  <rect x="570" y="210" width="128" height="30" rx="15" fill="rgba(245,158,11,0.1)" stroke="#f59e0b" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="584" y="230" fill="#f59e0b" font-size="11" font-weight="bold">resposta &lt; 1s</text>
+
+  <!-- PHONE FRAME -->
+  <rect x="896" y="40" width="268" height="614" rx="34" fill="rgba(0,0,0,0.45)" transform="translate(10,14)"/>
+  <rect x="888" y="28" width="284" height="638" rx="40" fill="#0d0e10" stroke="#2a3942" stroke-width="1.5"/>
+  <rect x="896" y="40" width="268" height="614" rx="34" fill="url(#phoneBody)" stroke="#1A2830" stroke-width="1"/>
+  <rect x="994" y="40" width="72" height="24" rx="12" fill="#0d0e10"/>
+  <circle cx="1040" cy="52" r="5" fill="#1A2830"/>
+  <circle cx="1040" cy="52" r="2.5" fill="#0d0e10"/>
+  <rect x="1172" y="180" width="6" height="56" rx="3" fill="#1A2830"/>
+  <rect x="1172" y="252" width="6" height="36" rx="3" fill="#1A2830"/>
+  <rect x="882" y="196" width="6" height="44" rx="3" fill="#1A2830"/>
+
+  <!-- SCREEN CONTENT clipped -->
+  <g clip-path="url(#screenClip)">
+    <rect x="893" y="91" width="282" height="618" fill="#0D1B22"/>
+    <rect x="893" y="91" width="282" height="618" fill="url(#dots)"/>
+
+    <!-- WA HEADER -->
+    <rect x="893" y="91" width="282" height="64" fill="#202C33"/>
+    <line x1="893" y1="155" x2="1175" y2="155" stroke="#ffffff" stroke-width="0.5" opacity="0.07"/>
+    <circle cx="926" cy="123" r="20" fill="url(#avatarGrad)"/>
+    <text x="926" y="128" fill="white" font-size="15" text-anchor="middle" font-weight="bold">IA</text>
+    <text x="954" y="119" fill="#E9EDEF" font-size="13.5" font-weight="bold">Assistente Sofia</text>
+    <circle cx="955" cy="131" r="4" fill="#25D366"/>
+    <text x="963" y="135" fill="#25D366" font-size="10.5">online agora</text>
+
+    <!-- DATE PILL -->
+    <rect x="990" y="164" width="88" height="20" rx="10" fill="rgba(32,44,51,0.85)"/>
+    <text x="1034" y="178" fill="#8696A0" font-size="10" text-anchor="middle">Hoje</text>
+
+    <!-- MSG 1 received -->
+    <rect x="905" y="194" width="212" height="62" rx="8" fill="#1F2C34"/>
+    <polygon points="905,194 895,204 905,204" fill="#1F2C34"/>
+    <text x="917" y="212" fill="#E9EDEF" font-size="11">Ola! Sou a Sofia da Urban</text>
+    <text x="917" y="228" fill="#E9EDEF" font-size="11">Fit. Qual seu nome e como</text>
+    <text x="917" y="244" fill="#E9EDEF" font-size="11">posso te ajudar? &#x1F600;</text>
+    <text x="1059" y="250" fill="#8696A0" font-size="9">09:41</text>
+
+    <!-- MSG 2 sent -->
+    <rect x="1000" y="270" width="156" height="36" rx="8" fill="#005C4B"/>
+    <polygon points="1156,270 1166,280 1156,280" fill="#005C4B"/>
+    <text x="1012" y="290" fill="#E9EDEF" font-size="11">Carlos, quero tenis corrida</text>
+    <text x="1113" y="300" fill="rgba(255,255,255,0.4)" font-size="9">09:42</text>
+    <text x="1132" y="300" fill="#34B7F1" font-size="10.5">&#x2713;&#x2713;</text>
+
+    <!-- MSG 3 received -->
+    <rect x="905" y="320" width="222" height="74" rx="8" fill="#1F2C34"/>
+    <polygon points="905,320 895,330 905,330" fill="#1F2C34"/>
+    <text x="917" y="338" fill="#E9EDEF" font-size="11">Otimo Carlos! &#x1F3C3; Para indicar</text>
+    <text x="917" y="354" fill="#E9EDEF" font-size="11">o modelo certo: voce corre em</text>
+    <text x="917" y="370" fill="#E9EDEF" font-size="11">asfalto ou trilha? Qual sua</text>
+    <text x="917" y="386" fill="#E9EDEF" font-size="11">pronacao e numero?</text>
+    <text x="1075" y="388" fill="#8696A0" font-size="9">09:42</text>
+
+    <!-- MSG 4 sent -->
+    <rect x="990" y="408" width="166" height="48" rx="8" fill="#005C4B"/>
+    <polygon points="1156,408 1166,418 1156,418" fill="#005C4B"/>
+    <text x="1002" y="427" fill="#E9EDEF" font-size="11">Asfalto, 3x semana.</text>
+    <text x="1002" y="445" fill="#E9EDEF" font-size="11">Pronacao neutra, n42</text>
+    <text x="1113" y="450" fill="rgba(255,255,255,0.4)" font-size="9">09:43</text>
+    <text x="1132" y="450" fill="#34B7F1" font-size="10.5">&#x2713;&#x2713;</text>
+
+    <!-- TYPING -->
+    <rect x="905" y="472" width="66" height="28" rx="14" fill="#1F2C34"/>
+    <circle cx="922" cy="486" r="4" fill="#8696A0"/>
+    <circle cx="934" cy="486" r="4" fill="#8696A0" opacity="0.7"/>
+    <circle cx="946" cy="486" r="4" fill="#8696A0" opacity="0.4"/>
+
+    <!-- MSG 5 received confirmed -->
+    <rect x="905" y="514" width="240" height="88" rx="8" fill="#1F2C34" stroke="#25D366" stroke-width="0.7" stroke-opacity="0.5"/>
+    <polygon points="905,514 895,524 905,524" fill="#1F2C34"/>
+    <text x="917" y="533" fill="#25D366" font-size="11" font-weight="bold">&#x2705; Perfil identificado!</text>
+    <text x="917" y="551" fill="#E9EDEF" font-size="10.5">Encaminhei pro consultor</text>
+    <text x="917" y="567" fill="#E9EDEF" font-size="10.5">Paulo com seu perfil completo.</text>
+    <text x="917" y="583" fill="#E9EDEF" font-size="10.5">Retorno em ate 30 min &#x1F3AF;</text>
+    <text x="1091" y="596" fill="#8696A0" font-size="9">09:44</text>
+
+    <!-- INPUT BAR -->
+    <rect x="893" y="620" width="282" height="48" fill="#202C33"/>
+    <rect x="905" y="630" width="214" height="28" rx="14" fill="#2A3942"/>
+    <text x="920" y="649" fill="#8696A0" font-size="11">Digite uma mensagem...</text>
+    <circle cx="1148" cy="644" r="16" fill="url(#avatarGrad)"/>
+    <path d="M1141 644 L1150 639 L1155 644 L1150 649 Z" fill="white" opacity="0.9"/>
+  </g>
+
+  <!-- Screen edge reflection -->
+  <rect x="896" y="40" width="268" height="614" rx="34" fill="none" stroke="white" stroke-width="0.8" opacity="0.06"/>
+</svg>

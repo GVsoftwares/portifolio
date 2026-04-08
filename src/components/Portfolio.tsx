@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ExternalLink, MonitorSmartphone, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -10,13 +10,23 @@ interface PortfolioProps {
   onViewDespesas?: () => void;
   onViewBaratao?: () => void;
   onViewSaints?: () => void;
+  onViewChatbot?: () => void;
+  onViewDashboard?: () => void;
 }
 
-export default function Portfolio({ onViewDespesas, onViewBaratao, onViewSaints }: PortfolioProps) {
+export default function Portfolio({ onViewDespesas, onViewBaratao, onViewSaints, onViewChatbot, onViewDashboard }: PortfolioProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
-  const projects = [
+  const projects: {
+    title: string;
+    description: string;
+    techs: string[];
+    result: string;
+    image?: string;
+    bgStyle?: React.CSSProperties;
+    onView?: () => void;
+  }[] = [
     {
       title: 'Mv-Despesas',
       description: 'Aplicativo de gestão financeira focado em famílias e casais. Conta com dashboards interativos, sincronização em tempo real na nuvem e biometria.',
@@ -40,6 +50,22 @@ export default function Portfolio({ onViewDespesas, onViewBaratao, onViewSaints 
       result: 'Uma vitrine sofisticada e rápida que valoriza os produtos e direciona para vendas.',
       image: saintsMassasPreview,
       onView: onViewSaints
+    },
+    {
+      title: 'Chatbot IA',
+      description: 'Chatbot com IA para WhatsApp que qualifica leads automaticamente. Entende o perfil do cliente, coleta as informações certas e encaminha para o consultor ideal, 24h por dia.',
+      techs: ['Node.js', 'WhatsApp API', 'TypeScript', 'OpenAI'],
+      result: 'Reduza 80% do tempo de pré-vendas qualificando leads automaticamente no WhatsApp.',
+      image: '/chatbot-preview.svg',
+      onView: onViewChatbot
+    },
+    {
+      title: 'Dashboard Saints',
+      description: 'Business Intelligence para Saints Massas — 4 módulos integrados: estoque, produção, financeiro e clientes. KPIs visuais, gráficos interativos e tabelas dinâmicas em um único painel.',
+      techs: ['Power BI', 'Excel', 'DAX', 'VBA'],
+      result: 'Gestão operacional centralizada, eliminando planilhas manuais e aumentando a eficiência em +60%.',
+      image: '/dashboard-preview.svg',
+      onView: onViewDashboard
     }
   ];
 
@@ -142,7 +168,8 @@ export default function Portfolio({ onViewDespesas, onViewBaratao, onViewSaints 
                     : 'flex-[1] min-h-[70px] md:min-h-0 md:min-w-[100px] border border-slate-700/50 opacity-70 hover:opacity-100'
                 } bg-[#020617]`}
               >
-                {/* Background Image */}
+                {/* Background Image or Gradient */}
+                {project.image ? (
                 <img
                   src={project.image}
                   alt={project.title}
@@ -151,6 +178,9 @@ export default function Portfolio({ onViewDespesas, onViewBaratao, onViewSaints 
                   className={`absolute inset-0 w-full h-full object-cover transition-transform duration-500 will-change-transform ${isActive ? 'scale-100' : 'scale-105 object-center'}`}
                   referrerPolicy="no-referrer"
                 />
+                ) : (
+                <div className="absolute inset-0" style={project.bgStyle} />
+                )}
                 
                 {/* Cyberpunk Grade/Overlay (Sem transition lenta) */}
                 <div className={`absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/80 to-transparent ${isActive ? 'opacity-100' : 'opacity-90'}`} />

@@ -40,9 +40,9 @@ export default function PortfolioMvDespesas({ onBack }: Props) {
             </div>
           </div>
           <nav className="nav-links">
-            <a href="#funcionalidades">Funcionalidades</a>
-            <a href="#familia">Uso Familiar</a>
-            <a href="#seguranca">Segurança</a>
+            <a href="#funcionalidades" onClick={(e) => { e.preventDefault(); document.getElementById('funcionalidades')?.scrollIntoView({ behavior: 'smooth' }); }}>Funcionalidades</a>
+            <a href="#familia" onClick={(e) => { e.preventDefault(); document.getElementById('familia')?.scrollIntoView({ behavior: 'smooth' }); }}>Uso Familiar</a>
+            <a href="#seguranca" onClick={(e) => { e.preventDefault(); document.getElementById('seguranca')?.scrollIntoView({ behavior: 'smooth' }); }}>Segurança</a>
             <a 
               href="https://mvdespesas.vercel.app/" 
               target="_blank" 
@@ -71,7 +71,7 @@ export default function PortfolioMvDespesas({ onBack }: Props) {
               Mv-Despesas é um aplicativo moderno e intuitivo que transforma a maneira como você gerencia seu dinheiro.
               Com foco total na colaboração em família e segurança de ponta.
             </p>
-            <a href="#funcionalidades" className="cta-button">
+            <a href="#funcionalidades" className="cta-button" onClick={(e) => { e.preventDefault(); document.getElementById('funcionalidades')?.scrollIntoView({ behavior: 'smooth' }); }}>
               Conheça o App <ArrowRight size={20} />
             </a>
           </div>

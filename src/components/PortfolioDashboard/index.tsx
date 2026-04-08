@@ -415,11 +415,11 @@ export default function PortfolioDashboard({ onBack }: Props) {
             </div>
           </div>
           <nav className="nav-links">
-            <a href="#visao-geral">Visão Geral</a>
-            <a href="#estoque">Estoque</a>
-            <a href="#producao">Produção</a>
-            <a href="#financeiro">Financeiro</a>
-            <a href="#clientes">Clientes</a>
+            <a href="#visao-geral" onClick={(e) => { e.preventDefault(); document.getElementById('visao-geral')?.scrollIntoView({ behavior: 'smooth' }); }}>Visão Geral</a>
+            <a href="#estoque" onClick={(e) => { e.preventDefault(); document.getElementById('estoque')?.scrollIntoView({ behavior: 'smooth' }); }}>Estoque</a>
+            <a href="#producao" onClick={(e) => { e.preventDefault(); document.getElementById('producao')?.scrollIntoView({ behavior: 'smooth' }); }}>Produção</a>
+            <a href="#financeiro" onClick={(e) => { e.preventDefault(); document.getElementById('financeiro')?.scrollIntoView({ behavior: 'smooth' }); }}>Financeiro</a>
+            <a href="#clientes" onClick={(e) => { e.preventDefault(); document.getElementById('clientes')?.scrollIntoView({ behavior: 'smooth' }); }}>Clientes</a>
           </nav>
         </div>
       </header>
@@ -440,7 +440,7 @@ export default function PortfolioDashboard({ onBack }: Props) {
               estoque, produção, finanças e clientes em um único painel visual interativo —
               transformando dados brutos em decisões ágeis.
             </p>
-            <a href="#estoque" className="cta-button">
+            <a href="#estoque" className="cta-button" onClick={(e) => { e.preventDefault(); document.getElementById('estoque')?.scrollIntoView({ behavior: 'smooth' }); }}>
               Explorar Módulos <ArrowRight size={20} />
             </a>
           </div>
@@ -767,7 +767,7 @@ export default function PortfolioDashboard({ onBack }: Props) {
           </p>
           <p style={{ color: '#475569', fontSize: '0.85rem' }}>
             © {new Date().getFullYear()} Desenvolvido por{' '}
-            <span style={{ color: '#3B82F6', fontWeight: 700 }}>Guilherme Souza Dev</span>
+            <span style={{ color: '#3B82F6', fontWeight: 700 }}>GV Softwares</span>
           </p>
         </div>
       </footer>

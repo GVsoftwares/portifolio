@@ -40,10 +40,10 @@ export default function PortfolioSaints({ onBack }: Props) {
             </div>
           </div>
           <nav className="nav-links">
-            <a href="#apresentacao">Apresentação</a>
-            <a href="#tecnologias">Tecnologias</a>
-            <a href="#receitas">Receitas</a>
-            <a href="#design">Design</a>
+            <a href="#apresentacao" onClick={(e) => { e.preventDefault(); document.getElementById('apresentacao')?.scrollIntoView({ behavior: 'smooth' }); }}>Apresentação</a>
+            <a href="#tecnologias" onClick={(e) => { e.preventDefault(); document.getElementById('tecnologias')?.scrollIntoView({ behavior: 'smooth' }); }}>Tecnologias</a>
+            <a href="#receitas" onClick={(e) => { e.preventDefault(); document.getElementById('receitas')?.scrollIntoView({ behavior: 'smooth' }); }}>Receitas</a>
+            <a href="#design" onClick={(e) => { e.preventDefault(); document.getElementById('design')?.scrollIntoView({ behavior: 'smooth' }); }}>Design</a>
             <a 
               href="https://www.saintsmassas.com.br/" 
               target="_blank" 
@@ -75,7 +75,7 @@ export default function PortfolioSaints({ onBack }: Props) {
               Desenvolvemos a Saints Massas para refletir o lado premium do artesanato gastronômico. 
               Um catálogo rápido, visualmente imersivo e totalmente voltado para conversão por WhatsApp.
             </p>
-            <a href="#tecnologias" className="cta-button">
+            <a href="#tecnologias" className="cta-button" onClick={(e) => { e.preventDefault(); document.getElementById('tecnologias')?.scrollIntoView({ behavior: 'smooth' }); }}>
               Conheça as Tecnologias <ArrowRight size={20} />
             </a>
           </div>

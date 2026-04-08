@@ -42,9 +42,9 @@ export default function PortfolioBarataoDoDia({ onBack }: Props) {
             </div>
           </div>
           <nav className="nav-links">
-            <a href="#experiencia">Experiência</a>
-            <a href="#admin">Gestão CMS</a>
-            <a href="#seguranca">Segurança</a>
+            <a href="#experiencia" onClick={(e) => { e.preventDefault(); document.getElementById('experiencia')?.scrollIntoView({ behavior: 'smooth' }); }}>Experiência</a>
+            <a href="#admin" onClick={(e) => { e.preventDefault(); document.getElementById('admin')?.scrollIntoView({ behavior: 'smooth' }); }}>Gestão CMS</a>
+            <a href="#seguranca" onClick={(e) => { e.preventDefault(); document.getElementById('seguranca')?.scrollIntoView({ behavior: 'smooth' }); }}>Segurança</a>
             <a 
               href="https://detudoumpouco.vercel.app" 
               target="_blank" 
@@ -76,7 +76,7 @@ export default function PortfolioBarataoDoDia({ onBack }: Props) {
               Substituímos o tradicional link na bio por uma plataforma multicanal dinâmica.
               Layout responsivo com navegação fluida e encaminhamento inteligente de vendas.
             </p>
-            <a href="#experiencia" className="cta-button">
+            <a href="#experiencia" className="cta-button" onClick={(e) => { e.preventDefault(); document.getElementById('experiencia')?.scrollIntoView({ behavior: 'smooth' }); }}>
               Conheça o Projeto <ArrowRight size={20} />
             </a>
           </div>

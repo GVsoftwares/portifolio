@@ -193,7 +193,7 @@ export default function Portfolio({ onViewDespesas, onViewBaratao, onViewSaints,
 
                 {/* Inactive Vertical Title */}
                 <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${isActive ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-                  <h3 className="text-slate-300 font-bold whitespace-nowrap md:-rotate-90 tracking-[0.2em] text-lg md:text-xl transition-colors group-hover:text-cyan-400 group-hover:tracking-[0.3em] font-mono">
+                  <h3 className="text-slate-300 font-bold whitespace-nowrap md:-rotate-90 tracking-widest text-sm md:text-base transition-colors group-hover:text-cyan-400 font-mono">
                     {project.title}
                   </h3>
                 </div>
@@ -201,20 +201,20 @@ export default function Portfolio({ onViewDespesas, onViewBaratao, onViewSaints,
                 {/* Active Content */}
                 <div className={`absolute inset-0 p-6 md:p-12 flex flex-col justify-end w-full md:w-3/4 lg:w-2/3 transition-all duration-700 delay-200 ${isActive ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0 pointer-events-none'}`}>
                   
-                  <div className="flex items-center gap-4 mb-4">
+                  <div className="flex items-center gap-4 mb-2">
                     <div className="h-1 w-12 bg-cyan-500 rounded-full shadow-[0_0_10px_rgba(6,182,212,0.8)]"></div>
                     <span className="text-cyan-400 font-mono text-sm tracking-widest uppercase">Sistema Integrado</span>
                   </div>
 
-                  <h3 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-cyan-500 mb-6 drop-shadow-lg">
+                  <h3 className="text-2xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-cyan-500 mb-4 drop-shadow-lg leading-tight tracking-tight">
                     {project.title}
                   </h3>
                   
-                  <p className="text-slate-300 text-sm md:text-lg mb-8 leading-relaxed max-w-xl bg-[#020617]/70 p-4 rounded-xl border-l-2 border-cyan-500/30">
+                  <p className="text-slate-300 text-sm md:text-lg mb-4 leading-relaxed max-w-xl bg-[#020617]/70 p-4 rounded-xl border-l-2 border-cyan-500/30">
                     {project.description}
                   </p>
 
-                  <div className="mb-8">
+                  <div className="mb-4">
                     <div className="flex flex-wrap gap-2">
                       {project.techs.map((tech, i) => (
                         <span key={i} className="px-3 py-1.5 text-xs font-bold text-cyan-300 bg-[#020617] rounded-lg border border-cyan-500/30 shadow-none flex items-center gap-2">
@@ -225,7 +225,7 @@ export default function Portfolio({ onViewDespesas, onViewBaratao, onViewSaints,
                     </div>
                   </div>
 
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                     <button
                       onClick={(e) => { e.stopPropagation(); project.onView && project.onView(); }}
                       className="group/btn relative px-8 py-4 bg-transparent text-white font-bold rounded-xl overflow-hidden transition-all flex items-center justify-center gap-3 border border-cyan-500 hover:border-cyan-400"
@@ -264,7 +264,7 @@ export default function Portfolio({ onViewDespesas, onViewBaratao, onViewSaints,
             href="#contato"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-white bg-slate-800 hover:bg-slate-700 border border-slate-600 rounded-xl transition-all shadow-[0_0_20px_rgba(255,255,255,0.05)]"
           >
-            Iniciar Protocolo de Contato
+            Solicitar Orçamento
             <ExternalLink className="w-5 h-5" />
           </a>
         </motion.div>

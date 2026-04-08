@@ -56,9 +56,9 @@ export default function PortfolioChatbot({ onBack }: Props) {
             </div>
           </div>
           <nav className="nav-links">
-            <a href="#como-funciona">Como Funciona</a>
-            <a href="#demo">Demonstração</a>
-            <a href="#funcionalidades">Funcionalidades</a>
+            <a href="#como-funciona" onClick={(e) => { e.preventDefault(); document.getElementById('como-funciona')?.scrollIntoView({ behavior: 'smooth' }); }}>Como Funciona</a>
+            <a href="#demo" onClick={(e) => { e.preventDefault(); document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' }); }}>Demonstração</a>
+            <a href="#funcionalidades" onClick={(e) => { e.preventDefault(); document.getElementById('funcionalidades')?.scrollIntoView({ behavior: 'smooth' }); }}>Funcionalidades</a>
           </nav>
         </div>
       </header>
@@ -90,7 +90,7 @@ export default function PortfolioChatbot({ onBack }: Props) {
               consultor ideal, sem deixar nenhum lead sem resposta.
             </p>
 
-            <a href="#demo" className="cta-button">
+            <a href="#demo" className="cta-button" onClick={(e) => { e.preventDefault(); document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' }); }}>
               Ver Demonstração <ArrowRight size={20} />
             </a>
           </div>
@@ -567,8 +567,9 @@ export default function PortfolioChatbot({ onBack }: Props) {
             </div>
             Chatbot IA
           </div>
-          <p className="copyright">
-            Chatbot com IA para WhatsApp · Desenvolvido com Node.js, OpenAI &amp; Supabase
+          <p className="copyright" style={{ color: '#475569', fontSize: '0.85rem' }}>
+            © {new Date().getFullYear()} Desenvolvido por{' '}
+            <span style={{ color: '#3B82F6', fontWeight: 700 }}>GV Softwares</span>
           </p>
         </div>
       </footer>

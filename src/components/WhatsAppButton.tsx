@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 export default function WhatsAppButton() {
     const [isVisible, setIsVisible] = useState(false);
     const [isShaking, setIsShaking] = useState(false);
-    const phoneNumber = '5534998767988';
+    const phoneNumber = '5534997976644';
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20GV%20Softwares.`;
 
     useEffect(() => {

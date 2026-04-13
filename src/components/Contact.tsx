@@ -97,8 +97,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-white font-bold mb-1">WhatsApp</h4>
-                  <a href="https://wa.me/5534998767988" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-emerald-400 transition-colors">
-                    +55 (34) 99876-7988
+                  <a href="https://wa.me/5534997976644" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-emerald-400 transition-colors">
+                    +55 (34) 99797-6644
                   </a>
                 </div>
               </div>
